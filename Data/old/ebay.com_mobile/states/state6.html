@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Crawl overview</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="CrawlJax">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<link href="../css/shCore.css" rel="stylesheet" type="text/css" />
+<link href="../css/shCoreDefault.css" rel="stylesheet" type="text/css" />
+<style>
+.tooltip-inner {
+	max-width: 300px;
+	word-wrap: break-word;
+}
+
+body {
+	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+							<a class="brand" href="../index.html#graph">Crawl overview</a>
+						<ul class="nav">
+									<li class="active"><a href="#">State inspector</a></li>
+							</ul>
+			<div class="nav pull-right">
+				<a href="#" class="btn graphBtn" id='pauseButton' data-toggle="tooltip" data-placement="bottom" title="Pause the graph movement"><i class="icon-pause"></i></a>
+				<a href="#" class="btn graphBtn" rel="popover" data-placement="bottom"  data-original-title="What to do"><i class='icon-question-sign'></i></a>
+				<div style="display: none" id='popup-content'>
+					<p>You can double click a state to inspect it further.</p>
+					<p>Clicking an edge gives more details on the state transition.</p>
+					<p>Use your mouse to zoom in and out by scrolling, or drag the states and view around.</p>
+				</div>
+				<a href="result.json" class="btn" data-toggle="tooltip" data-placement="bottom" title="Download result as JSON"><i class='icon-download'></i></a>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+</nav>	<div class='container' >
+		<h1>Summary of state6</h1>
+		<table class="table table-bordered table-striped">
+			<colgroup>
+				<col class="span1">
+				<col class="span7">
+			</colgroup>
+			<tbody>
+				<tr>
+					<th>URL</th>
+					<td><a href='https://www.ebay.com/sh/landing'>https://www.ebay.com/sh/landing</a></td>
+				</tr>
+				<tr>
+					<th>Fan in</th>
+					<td>1</td>
+				</tr>
+				<tr>
+					<th>Fan out</th>
+					<td>0</td>
+				</tr>
+				<tr>
+					<th>Interaction elements</th>
+					<td>0</td>
+				</tr>
+				<tr>
+					<th>Failed events</th>
+					<td>-</td>
+			</tbody>
+		</table>
+		<ul id='tabs' class="nav nav-tabs">
+			<li class="active">
+				<a href="#screenshot">Screenshot</a>
+			</li>
+			<li>
+				<a href="#dom">Captured DOM</a>
+			</li>	
+			<li>
+				<a href="#interactions">Interactions</a>
+			</li>			
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" style="position: relative;" id='screenshot'>			
+				<img style='max-width: none;' border='0' src='../screenshots/state6.jpg' /> 
+							</div>
+			<div class="tab-pane" id='dom'>
+				<h2>Captured DOM</h2>
+				<pre class='brush: html'>&lt;!DOCTYPE html&gt;&lt;!--[if IE 8 ]&gt; &lt;html lang=&quot;en&quot; class=&quot;ie8&quot;&gt; &lt;![endif]--&gt;&lt;!--[if IE 9 ]&gt; &lt;html lang=&quot;en&quot; class=&quot;ie9&quot;&gt; &lt;![endif]--&gt;&lt;!--[if (gt IE 9)|!(IE)]&gt;&lt;!--&gt;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; lang=&quot;en&quot;&gt;&lt;!--&lt;![endif]--&gt;&lt;head&gt;&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;&lt;title&gt;eBay Seller Hub&lt;/title&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://ir.ebaystatic.com/rs/v/kre0ftrtr22lbauvhmlbnv0w0qh.css?proc=DU:N&quot; /&gt;&lt;link rel=&quot;dns-prefetch&quot; href=&quot;//secureir.ebaystatic.com&quot; /&gt;&lt;link rel=&quot;dns-prefetch&quot; href=&quot;//i.ebayimg.com&quot; /&gt;&lt;script type=&quot;text/javascript&quot; id=&quot;www-widgetapi-script&quot; src=&quot;https://s.ytimg.com/yts/jsbin/www-widgetapi-vflyiGtkL/www-widgetapi.js&quot; async=&quot;&quot;&gt;&lt;/script&gt;&lt;script&gt;$ssgST=new Date().getTime();&lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://ir.ebaystatic.com/rs/c/landing-25bd1b.css&quot; /&gt;&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/ico&quot; href=&quot;//www.ebay.com/favicon.ico&quot; /&gt;&lt;/head&gt;&lt;body class=&quot;multi-column mweb ebay-gh--enabled&quot;&gt;&lt;div class=&quot;ebay-header&quot;&gt;&lt;style type=&quot;text/css&quot;&gt;.gh-hdn{ display: none!important;}&lt;/style&gt; &lt;a id=&quot;gh-skipTo&quot; class=&quot;gh-hdn&quot; href=&quot;#mainContent&quot;&gt;Skip to main content&lt;/a&gt;&lt;div id=&quot;gh-mask&quot;&gt;&lt;/div&gt;&lt;div id=&quot;mw-hdr&quot;&gt;&lt;div id=&quot;gh-top&quot;&gt;&lt;div class=&quot;cl lgoCl&quot;&gt;&lt;a id=&quot;gh-mlogo&quot; class=&quot;ghspr gh-eBayLogo&quot; _sp=&quot;m2428.l4282&quot; href=&quot;http://m.ebay.com&quot;&gt;eBay&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;floatedRight&quot;&gt;&lt;div class=&quot;cl srchCl &quot;&gt;&lt;button id=&quot;gh-openSearch&quot; class=&quot;ghspr&quot; aria-label=&quot;Search eBay&quot;&gt;&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;cl myBCl&quot;&gt;&lt;a id=&quot;gh-mebay&quot; _sp=&quot;m2428.l4280&quot; aria-label=&quot;Go to My eBay page&quot; href=&quot;http://m.ebay.com/myebay?mfs=Header&amp;amp;actionName=WATCHING&quot;&gt;&lt;span class=&quot;hdSpt ghspr&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;cl shopCart&quot;&gt;&lt;a class=&quot;tracking&quot; id=&quot;shopCartAnchr&quot; _sp=&quot;m2428.l5003&quot; aria-label=&quot;Go to Shopping cart page&quot; href=&quot;http://m.ebay.com/shoppingCart&quot;&gt;&lt;div class=&quot;shopCartDiv ghspr&quot;&gt;&lt;div id=&quot;gh-mcart-n&quot; class=&quot;shopCartSq&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;form id=&quot;gh-f&quot; method=&quot;get&quot; action=&quot;https://m.ebay.com/sch/i.html&quot; role=&quot;dialog&quot;&gt;&lt;input type=&quot;hidden&quot; value=&quot;R40&quot; name=&quot;_from&quot; /&gt;&lt;input type=&quot;hidden&quot; name=&quot;_trksid&quot; value=&quot;m4084.l1313&quot; /&gt;&lt;input type=&quot;search&quot; required=&quot;&quot; size=&quot;50&quot; maxlength=&quot;300&quot; aria-label=&quot;Enter your search keyword&quot; placeholder=&quot;Search eBay&quot; id=&quot;kw&quot; name=&quot;_nkw&quot; autocapitalize=&quot;off&quot; autocorrect=&quot;off&quot; spellcheck=&quot;false&quot; autocomplete=&quot;off&quot; aria-haspopup=&quot;false&quot; /&gt;&lt;input type=&quot;submit&quot; value=&quot;Search&quot; id=&quot;ghs-submit&quot; class=&quot;ghspr&quot; /&gt;&lt;button aria-label=&quot;Clear search keyword&quot; id=&quot;ghs-clear&quot; class=&quot;ghspr&quot;&gt;&lt;/button&gt;&lt;button aria-label=&quot;Close search dialog&quot; id=&quot;ghs-cancel&quot;&gt;Cancel&lt;/button&gt;&lt;div id=&quot;gh-searchOverlay&quot; class=&quot;suggestion&quot;&gt;&lt;/div&gt;&lt;/form&gt;&lt;/div&gt; &lt;/div&gt;&lt;div class=&quot;sh-main&quot;&gt;&lt;div class=&quot;right-col&quot;&gt;&lt;div class=&quot;sh-main-content&quot; id=&quot;mainContent&quot; role=&quot;main&quot; tabindex=&quot;-1&quot;&gt;&lt;section class=&quot;landing&quot;&gt;&lt;header&gt;&lt;div class=&quot;content&quot;&gt;&lt;h1 class=&quot;sh-large&quot;&gt;It's about to get easier to sell more&lt;/h1&gt;&lt;h2&gt;eBay Seller Hub helps you run your business and increase your sales.&lt;/h2&gt;&lt;div class=&quot;optin-options&quot;&gt;&lt;div class=&quot;optin-button&quot;&gt;&lt;a href=&quot;/sh/landing/1&quot; class=&quot;btn btn--faux btn--primary&quot;&gt;Start using Seller Hub&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;image&quot;&gt;&lt;img src=&quot;https://securepics.ebaystatic.com/aw/sell/sellerhub/SH_GH_performance.png&quot; srcset=&quot;https://securepics.ebaystatic.com/aw/sell/sellerhub/SH_GH_performance@2x.png&quot; width=&quot;682&quot; alt=&quot;eBay Seller Hub is here!&quot; /&gt;&lt;/div&gt;&lt;/header&gt;&lt;section class=&quot;advantages&quot;&gt;&lt;div class=&quot;swipeable&quot;&gt;&lt;ul style=&quot;touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); transform: translate3d(-19.9998px, 0px, 0px);&quot;&gt;&lt;li class=&quot;itemslide-active&quot;&gt;&lt;div class=&quot;icon all-in-one-place&quot;&gt;&lt;/div&gt;&lt;h3&gt;One destination&lt;/h3&gt;&lt;h4&gt;Your selling activities, all in one place.&lt;/h4&gt;&lt;/li&gt;&lt;li&gt;&lt;div class=&quot;icon better-tools&quot;&gt;&lt;/div&gt;&lt;h3&gt;Great new tools&lt;/h3&gt;&lt;h4&gt;Plus all your favorites, improved to get more done.&lt;/h4&gt;&lt;/li&gt;&lt;li&gt;&lt;div class=&quot;icon more-data&quot;&gt;&lt;/div&gt;&lt;h3&gt;More data&lt;/h3&gt;&lt;h4&gt;Your business performance, front and center.&lt;/h4&gt;&lt;/li&gt;&lt;/ul&gt;&lt;nav&gt;&lt;a class=&quot;active&quot;&gt;&lt;/a&gt;&lt;a&gt;&lt;/a&gt;&lt;a&gt;&lt;/a&gt;&lt;/nav&gt;&lt;/div&gt;&lt;/section&gt;&lt;section class=&quot;features&quot;&gt;&lt;h3&gt;Here are the highlights&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;div class=&quot;icon-left&quot;&gt;&lt;img class=&quot;lazy&quot; data-src=&quot;https://securepics.ebaystatic.com/aw/sell/sellerhub/core-selling-activities.png&quot; data-srcset=&quot;https://securepics.ebaystatic.com/aw/sell/sellerhub/core-selling-activities@2x1.png&quot; width=&quot;413&quot; alt=&quot;Angebote und Verk&auml;ufe&quot; /&gt;&lt;/div&gt;&lt;div&gt;&lt;h4&gt;Angebote und Verk&auml;ufe&lt;/h4&gt;&lt;h5&gt;Mit unserem optimierten Tool bringen Sie Ihre Angebote schneller auf die Plattform. Verk&auml;ufe managen Sie mit nur wenigen Klicks.&lt;/h5&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;h4&gt;Detailed sales info&lt;/h4&gt;&lt;h5&gt;See your daily sales trends and identify your top performers. Learn how buyers find your products.&lt;/h5&gt;&lt;/div&gt;&lt;div class=&quot;icon-right&quot;&gt;&lt;img class=&quot;lazy&quot; data-src=&quot;https://securepics.ebaystatic.com/aw/sell/sellerhub/detailed-sales-info.png&quot; data-srcset=&quot;https://securepics.ebaystatic.com/aw/sell/sellerhub/detailed-sales-info@2x1.png&quot; width=&quot;413&quot; alt=&quot;Detailed sales info&quot; /&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div class=&quot;icon-left&quot;&gt;&lt;img class=&quot;lazy&quot; data-src=&quot;https://securepics.ebaystatic.com/aw/sell/sellerhub/listing-guidance.png&quot; data-srcset=&quot;https://securepics.ebaystatic.com/aw/sell/sellerhub/listing-guidance@2x1.png&quot; width=&quot;406&quot; alt=&quot;Listing guidance&quot; /&gt;&lt;/div&gt;&lt;div&gt;&lt;h4&gt;Listing guidance&lt;/h4&gt;&lt;h5&gt;Get competitive insights to help optimize your listings. See what the competition is doing and how you compare.&lt;/h5&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;h4&gt;Marketing&lt;/h4&gt;&lt;h5&gt;Boost your sales with powerful, easy-to-use marketing and promotion tools. For eBay Stores subscribers.&lt;/h5&gt;&lt;/div&gt;&lt;div class=&quot;icon-right&quot;&gt;&lt;img class=&quot;lazy&quot; data-src=&quot;https://securepics.ebaystatic.com/aw/sell/sellerhub/marketing.png&quot; data-srcset=&quot;https://securepics.ebaystatic.com/aw/sell/sellerhub/marketing@2x1.png&quot; width=&quot;452&quot; alt=&quot;Marketing&quot; /&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class=&quot;video&quot;&gt;&lt;div&gt;&lt;iframe id=&quot;player&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;1&quot; title=&quot;YouTube video player&quot; width=&quot;811&quot; height=&quot;372&quot; src=&quot;https://www.youtube.com/embed/40pe2MoZ6Xo?rel=false&amp;amp;controls=false&amp;amp;showinfo=false&amp;amp;enablejsapi=1&amp;amp;origin=https%3A%2F%2Fwww.ebay.com&amp;amp;widgetid=1&quot; cd_frame_id_=&quot;e3a5c41af8bcbbb9c09ec51c87c98768&quot;&gt;&lt;/iframe&gt;&lt;button id=&quot;player-play&quot; class=&quot;visible&quot;&gt;&lt;span&gt;See it in action&lt;/span&gt;&lt;/button&gt;&lt;/div&gt;&lt;/section&gt;&lt;section class=&quot;call-to-action&quot;&gt;&lt;h3&gt;Start using Seller Hub&lt;/h3&gt;&lt;h4&gt;Try it now and have a look around.&lt;br /&gt;It's easy to switch back to your old selling tool at any time.&lt;/h4&gt;&lt;a href=&quot;/sh/landing/1&quot; class=&quot;btn btn--faux btn--primary&quot;&gt;Start using Seller Hub&lt;/a&gt;&lt;/section&gt;&lt;section class=&quot;good-to-know&quot;&gt;&lt;h3&gt;Good to know&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;h4&gt;Free to use&lt;/h4&gt;&lt;p&gt;There's no charge to use Seller Hub. You only pay for any subscriptions you may have, such as Selling Manager Pro or Stores, to access that functionality from Seller Hub.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h4&gt;Powerful reporting&lt;/h4&gt;&lt;p&gt;Get valuable insights into your business performance. In just a few clicks, find out how many buyers see and visit your listings, what your daily selling costs are, and how often links to your listings are put in front of buyers.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h4&gt;The tools you love and more&lt;/h4&gt;&lt;p&gt;We consolidated the features of your current selling tool&mdash;My eBay, Selling Manager, or Selling Manager Pro&mdash;and added new ways to look at your sales, selling costs, and buyer traffic. Stores subscribers can also find powerful marketing and promotion tools.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h4&gt;US only for now&lt;/h4&gt;&lt;p&gt;Seller Hub is currently only available to US sellers who list on eBay.com. We're working hard to make Seller Hub available on our international sites, too.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h4&gt;All your current listings and orders&lt;/h4&gt;&lt;p&gt;If you're already selling on eBay, we bring over all your listing activity and orders from your current selling tool, so you can just jump right in. You won't have to re-enter anything.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h4&gt;Ready to start?&lt;/h4&gt;&lt;p&gt;After you opt in, just click Sell on any eBay page to get to Seller Hub.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h4&gt;Easy to switch&lt;/h4&gt;&lt;p&gt;If you decide you want to go back to your old selling tool&mdash;My eBay, Selling Manager, or Selling Manager Pro&mdash;it's easy to switch back. Don't worry, you can opt back in to Seller Hub at any time.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;/section&gt;&lt;/div&gt;&lt;div class=&quot;sh-footer&quot;&gt;&lt;footer id=&quot;gf-mweb&quot; class=&quot;fsec&quot;&gt;&lt;section id=&quot;f1sec&quot;&gt;&lt;div class=&quot;footlist&quot;&gt;&lt;span class=&quot;im hm&quot;&gt;&lt;/span&gt;&lt;a _sp=&quot;m2429.l4288&quot; href=&quot;http://m.ebay.com&quot;&gt;Home&lt;/a&gt;&lt;/div&gt;&lt;div id=&quot;gf-my&quot; class=&quot;footlist&quot;&gt;&lt;span class=&quot;im my gf-myebay&quot;&gt;&lt;/span&gt;&lt;a _sp=&quot;m2429.l4290&quot; href=&quot;http://m.ebay.com/myebay?mfs=footer&amp;amp;actionName=WATCHING&quot;&gt;My eBay&lt;/a&gt;&lt;/div&gt;&lt;div id=&quot;gf-signin&quot; class=&quot;footlist&quot;&gt;&lt;span class=&quot;im sign&quot;&gt;&lt;/span&gt;&lt;a _sp=&quot;m2429.l4291&quot; href=&quot;https://signin.ebay.com/ws/eBayISAPI.dll?SignIn&amp;amp;ru=https%3A%2F%2Fwww.ebay.com%2Fsh%2Flanding&quot;&gt;Sign in / Register&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;footlist&quot;&gt;&lt;span class=&quot;im sell&quot;&gt;&lt;/span&gt;&lt;a _sp=&quot;m2429.l4895&quot; href=&quot;http://www.ebay.com/sl/sell&quot;&gt;Sell an item&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;footlist&quot;&gt;&lt;span class=&quot;im cus&quot;&gt;&lt;/span&gt;&lt;a _sp=&quot;m2429.l4292&quot; href=&quot;https://ocsnext.ebay.com/ocs/home?srcAppId=5&quot;&gt;Help &amp;amp; Contact&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;footlist &quot; id=&quot;gh-android-app&quot;&gt;&lt;span class=&quot;app&quot;&gt;&lt;/span&gt;&lt;a _sp=&quot;m2429.l4294&quot; id=&quot;androidApp&quot; class=&quot;downloadAppLink&quot; href=&quot;market://details?id=com.ebay.mobile&quot;&gt;Download the free eBay app&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;footlist hidden&quot; id=&quot;gh-itunes-app&quot;&gt;&lt;span class=&quot;app&quot;&gt;&lt;/span&gt;&lt;a _sp=&quot;m2429.l4294&quot; id=&quot;iTunesApp&quot; class=&quot;downloadAppLink&quot; href=&quot;http://itunes.apple.com/app/ebay-mobile/id282614216?mt=8&quot;&gt;Download the free eBay app&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;section id=&quot;f2sec&quot;&gt;&lt;span&gt;&lt;a _sp=&quot;m2429.l4402&quot; href=&quot;http://m.ebay.com/logout&quot;&gt;Sign out&lt;/a&gt;&lt;/span&gt;&lt;/section&gt;&lt;section id=&quot;f3sec&quot;&gt;&lt;a _sp=&quot;m2429.l4295&quot; href=&quot;http://m.ebay.com/about&quot;&gt;About&lt;/a&gt;&lt;a _sp=&quot;m2429.l6836&quot; href=&quot;http://pages.ebay.com/help/policies/user-agreement.html&quot;&gt;User Agreement&lt;/a&gt;&lt;a _sp=&quot;m2429.l4296&quot; href=&quot;http://pages.ebay.com/help/policies/privacy-policy.html&quot;&gt;Privacy&lt;/a&gt;&lt;a id=&quot;gf-classic&quot; _sp=&quot;m2429.l4297&quot; href=&quot;http://m.ebay.com/?SSOWebDispatcher&amp;amp;tg=web&amp;amp;ru=https%3A%2F%2Fwww.ebay.com%2Fsh%2Flanding%3Fredirect%3Dmobile&quot;&gt;Classic site&lt;/a&gt;&lt;div class=&quot;ftLnk&quot;&gt;&lt;a _sp=&quot;m2429.l4511&quot; href=&quot;http://qu.ebay.com/survey?srvName=mobileweb%20(mobileweb)&quot;&gt;Leave feedback&lt;/a&gt;&lt;a href=&quot;http://pages.ebay.com/help/account/cookies-web-beacons.html&quot;&gt;Cookies&lt;/a&gt;&lt;a _sp=&quot;m2429.l5104&quot; href=&quot;http://mobile.ebay.com&quot;&gt;eBay mobile&lt;/a&gt;&lt;/div&gt;&lt;/section&gt;&lt;div class=&quot;fcopy&quot;&gt;
+			&copy; 1995 - 2017 eBay Inc.&lt;/div&gt;&lt;/footer&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;script src=&quot;https://ir.ebaystatic.com/rs/c/landing-4e8bde.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;//youtube.com/iframe_api&quot;&gt;&lt;/script&gt;
+&lt;script&gt;$_mod.ready();&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://ir.ebaystatic.com/rs/v/apdmus2i42121jigfuqg0ghouug.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;if(typeof GH!=&quot;undefined&quot;&amp;amp;&amp;amp;GH){GH.urls={mweb_autocomplete_js:&quot;https://ir.ebaystatic.com/rs/c/ac.min.js&quot;,mweb_fnet_js:&quot;https://c.paypal.com/da/r/fb-all-prod.pp2.min.js&quot;};}if(typeof GH!=&quot;undefined&quot; &amp;amp;&amp;amp; GH){GH_config={&quot;siteId&quot;:&quot;0&quot;,&quot;geoLang&quot;:&quot;[]&quot;,&quot;lng&quot;:&quot;en-US&quot;,sin:0,pageId:2333103,fn:&quot;&quot;,id:&quot;&quot;};GH.init();}&lt;/script&gt;&lt;script&gt;/* ssgST: did not qualify sampling */&lt;/script&gt;&lt;browser-refresh enabled=&quot;&quot;&gt;&lt;/browser-refresh&gt;&lt;script src=&quot;https://gha.ebay.com/nproxy/notification/v1/bullseye&quot; async=&quot;&quot;&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;&lt;!-- RcmdId sh_landing,RlogId t6e%60uokjkb9%3Fuk%60cctkmijf(752%3C201-15d552ea29d-0x2302 --&gt;</pre>
+			</div>
+			<div class="tab-pane" id='interactions'>
+				<h2>Interactions</h2>
+				<table class="table table-bordered table-striped">
+					<tbody>
+						<tr>
+							<th>Xpath</th>
+							<th>Destination</tg>
+						</tr>
+											</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../lib/shCore.js"></script>
+	<script type="text/javascript" src="../lib/shBrushXml.js"></script>
+	<script type="text/javascript" src="../lib/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+	<script type="text/javascript">
+    	$(document).ready(function() {
+			SyntaxHighlighter.all()
+
+			$('#tabs a').click(function (e) {
+		  		e.preventDefault();
+		  		$(this).tab('show');
+			})
+		});
+    	
+    	$('.hovers').tooltip({
+    	    placement: function(a, element) {
+    	        var position = $(element).position();
+    	        if (position.left > 515) {
+    	            return "left";
+    	        }
+    	        if (position.left < 515) {
+    	            return "right";
+    	        }
+    	        if (position.top < 110){
+    	            return "bottom";
+    	        }
+    	        return "top";
+    	    }
+    	});
+	</script>
+</body>
+</html>

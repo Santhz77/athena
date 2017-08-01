@@ -1,0 +1,121 @@
+{
+  "url" : "https://en.wikipedia.org/wiki/Main_Page",
+  "basicAuthUrl" : null,
+  "browserConfig" : {
+    "browsertype" : "CHROME",
+    "numberOfBrowsers" : 1,
+    "browserBuilder" : { },
+    "remoteHubUrl" : null,
+    "defaultBuilder" : false,
+    "langOrNull" : null
+  },
+  "plugins" : [ "CrawlOverview", "ExtractHar", "ProxySettings" ],
+  "proxyConfiguration" : {
+    "port" : -1,
+    "hostname" : "none",
+    "type" : "NOTHING"
+  },
+  "crawlRules" : {
+    "crawlEvents" : [ "click" ],
+    "invariants" : [ ],
+    "oracleComparators" : [ {
+      "preConditions" : [ ],
+      "id" : "SimpleComparator",
+      "oracle" : { }
+    } ],
+    "ignoredFrameIdentifiers" : [ ],
+    "preCrawlConfig" : {
+      "waitConditions" : [ ],
+      "crawlConditions" : [ ],
+      "includedElements" : [ {
+        "tagName" : "A",
+        "id" : "id963815509",
+        "eventType" : "click",
+        "eventableCondition" : null,
+        "withXpathExpression" : null
+      }, {
+        "tagName" : "BUTTON",
+        "id" : "id1659367709",
+        "eventType" : "click",
+        "eventableCondition" : null,
+        "withXpathExpression" : null
+      }, {
+        "tagName" : "INPUT",
+        "id" : "id1346201722",
+        "eventType" : "click",
+        "eventableCondition" : {
+          "id" : "id1346201722",
+          "conditions" : [ ],
+          "inXPath" : "//INPUT[@type='submit']",
+          "linkedInputFields" : [ ]
+        },
+        "withXpathExpression" : "//INPUT[@type='submit']"
+      }, {
+        "tagName" : "INPUT",
+        "id" : "id111374580",
+        "eventType" : "click",
+        "eventableCondition" : {
+          "id" : "id111374580",
+          "conditions" : [ ],
+          "inXPath" : "//INPUT[@type='button']",
+          "linkedInputFields" : [ ]
+        },
+        "withXpathExpression" : "//INPUT[@type='button']"
+      } ],
+      "excludedElements" : [ ],
+      "filterAttributeNames" : [ "closure_hashcode_(\\w)*", "jquery[0-9]+" ]
+    },
+    "randomInputInForms" : false,
+    "inputSpecification" : {
+      "crawlElements" : [ ],
+      "formFieldNames" : { },
+      "formFieldValues" : { }
+    },
+    "testInvariantsWhileCrawling" : true,
+    "clickOnce" : true,
+    "randomizeCandidateElements" : false,
+    "crawlHiddenAnchors" : false,
+    "waitAfterReloadUrl" : 60,
+    "waitAfterEvent" : 60,
+    "allCrawlElements" : [ {
+      "tagName" : "A",
+      "id" : "id963815509",
+      "eventType" : "click",
+      "eventableCondition" : null,
+      "withXpathExpression" : null
+    }, {
+      "tagName" : "BUTTON",
+      "id" : "id1659367709",
+      "eventType" : "click",
+      "eventableCondition" : null,
+      "withXpathExpression" : null
+    }, {
+      "tagName" : "INPUT",
+      "id" : "id1346201722",
+      "eventType" : "click",
+      "eventableCondition" : {
+        "id" : "id1346201722",
+        "conditions" : [ ],
+        "inXPath" : "//INPUT[@type='submit']",
+        "linkedInputFields" : [ ]
+      },
+      "withXpathExpression" : "//INPUT[@type='submit']"
+    }, {
+      "tagName" : "INPUT",
+      "id" : "id111374580",
+      "eventType" : "click",
+      "eventableCondition" : {
+        "id" : "id111374580",
+        "conditions" : [ ],
+        "inXPath" : "//INPUT[@type='button']",
+        "linkedInputFields" : [ ]
+      },
+      "withXpathExpression" : "//INPUT[@type='button']"
+    } ]
+  },
+  "maximumStates" : 4,
+  "maximumRuntime" : 3600000,
+  "maximumDepth" : 2,
+  "stateVertexFactory" : null,
+  "outputDir" : "/home/nayak/Work/Thesis 2.0 /athena/Data/en.wikipedia.org_mobile_test"
+}

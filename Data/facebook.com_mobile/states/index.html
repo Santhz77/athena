@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Crawl overview</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="CrawlJax">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<link href="../css/shCore.css" rel="stylesheet" type="text/css" />
+<link href="../css/shCoreDefault.css" rel="stylesheet" type="text/css" />
+<style>
+.tooltip-inner {
+	max-width: 300px;
+	word-wrap: break-word;
+}
+
+body {
+	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+							<a class="brand" href="../index.html#graph">Crawl overview</a>
+						<ul class="nav">
+									<li class="active"><a href="#">State inspector</a></li>
+							</ul>
+			<div class="nav pull-right">
+				<a href="#" class="btn graphBtn" id='pauseButton' data-toggle="tooltip" data-placement="bottom" title="Pause the graph movement"><i class="icon-pause"></i></a>
+				<a href="#" class="btn graphBtn" rel="popover" data-placement="bottom"  data-original-title="What to do"><i class='icon-question-sign'></i></a>
+				<div style="display: none" id='popup-content'>
+					<p>You can double click a state to inspect it further.</p>
+					<p>Clicking an edge gives more details on the state transition.</p>
+					<p>Use your mouse to zoom in and out by scrolling, or drag the states and view around.</p>
+				</div>
+				<a href="result.json" class="btn" data-toggle="tooltip" data-placement="bottom" title="Download result as JSON"><i class='icon-download'></i></a>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+</nav>	<div class='container' >
+		<h1>Summary of index</h1>
+		<table class="table table-bordered table-striped">
+			<colgroup>
+				<col class="span1">
+				<col class="span7">
+			</colgroup>
+			<tbody>
+				<tr>
+					<th>URL</th>
+					<td><a href='https://www.facebook.com/'>https://www.facebook.com/</a></td>
+				</tr>
+				<tr>
+					<th>Fan in</th>
+					<td>0</td>
+				</tr>
+				<tr>
+					<th>Fan out</th>
+					<td>0</td>
+				</tr>
+				<tr>
+					<th>Interaction elements</th>
+					<td>16</td>
+				</tr>
+				<tr>
+					<th>Failed events</th>
+					<td>xpath /HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/BUTTON[2], xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/A[1]</td>
+			</tbody>
+		</table>
+		<ul id='tabs' class="nav nav-tabs">
+			<li class="active">
+				<a href="#screenshot">Screenshot</a>
+			</li>
+			<li>
+				<a href="#dom">Captured DOM</a>
+			</li>	
+			<li>
+				<a href="#interactions">Interactions</a>
+			</li>			
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" style="position: relative;" id='screenshot'>			
+				<img style='max-width: none;' border='0' src='../screenshots/index.jpg' /> 
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/SPAN[1]/A[1]" class='hovers'
+				style="position: absolute; z-index: 10; left: 243px; top: 447px; width: 34px; height: 18px; border: 2px solid orange;  " ></div>
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/A[1]" class='hovers'
+				style="position: absolute; z-index: 10; left: 177px; top: 482px; width: 168px; height: 22px; border: 2px solid orange;  " ></div>
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/BUTTON[2]" class='hovers'
+				style="position: absolute; z-index: 10; left: -3px; top: -2px; width: 2px; height: 2px; border: 2px solid orange;  " ></div>
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/SPAN[1]/A[1]" class='hovers'
+				style="position: absolute; z-index: 10; left: 75px; top: 447px; width: 38px; height: 18px; border: 2px solid orange;  " ></div>
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/UL[1]/LI[1]/SPAN[1]/A[2]" class='hovers'
+				style="position: absolute; z-index: 10; left: 198px; top: 361px; width: 64px; height: 18px; border: 2px solid orange;  " ></div>
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/SPAN[1]/A[1]" class='hovers'
+				style="position: absolute; z-index: 10; left: 238px; top: 429px; width: 46px; height: 18px; border: 2px solid orange;  " ></div>
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/A[1]" class='hovers'
+				style="position: absolute; z-index: 10; left: -3px; top: -2px; width: 2px; height: 2px; border: 2px solid orange;  " ></div>
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/A[1]" class='hovers'
+				style="position: absolute; z-index: 10; left: 126px; top: 86px; width: 104px; height: 21px; border: 2px solid orange;  " ></div>
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[1]/DIV[2]/A[1]" class='hovers'
+				style="position: absolute; z-index: 10; left: 96px; top: 312px; width: 162px; height: 38px; border: 2px solid orange;  " ></div>
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/BUTTON[1]" class='hovers'
+				style="position: absolute; z-index: 10; left: -3px; top: -2px; width: 2px; height: 2px; border: 2px solid orange;  " ></div>
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/SPAN[1]/A[1]" class='hovers'
+				style="position: absolute; z-index: 10; left: 74px; top: 465px; width: 42px; height: 18px; border: 2px solid orange;  " ></div>
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/FORM[1]/DIV[2]/DIV[1]/BUTTON[1]" class='hovers'
+				style="position: absolute; z-index: 10; left: 13px; top: 235px; width: 330px; height: 38px; border: 2px solid orange;  " ></div>
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[3]/SPAN[1]/A[1]" class='hovers'
+				style="position: absolute; z-index: 10; left: 238px; top: 465px; width: 44px; height: 18px; border: 2px solid orange;  " ></div>
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/SPAN[1]/A[1]" class='hovers'
+				style="position: absolute; z-index: 10; left: 45px; top: 483px; width: 98px; height: 18px; border: 2px solid orange;  " ></div>
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/UL[1]/LI[1]/SPAN[1]/A[1]" class='hovers'
+				style="position: absolute; z-index: 10; left: 92px; top: 361px; width: 98px; height: 18px; border: 2px solid orange;  " ></div>
+								<div rel="tooltip" data-original-title="/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/FORM[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/A[1]" class='hovers'
+				style="position: absolute; z-index: 10; left: -3px; top: -2px; width: 2px; height: 2px; border: 2px solid orange;  " ></div>
+							</div>
+			<div class="tab-pane" id='dom'>
+				<h2>Captured DOM</h2>
+				<pre class='brush: html'>&lt;!DOCTYPE html&gt;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;head&gt;&lt;title&gt;Facebook - Log In or Sign Up&lt;/title&gt;&lt;meta name=&quot;viewport&quot; content=&quot;user-scalable=no,initial-scale=1,maximum-scale=1&quot; /&gt;&lt;link href=&quot;https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/O2aKM2iSbOw.png&quot; rel=&quot;shortcut icon&quot; sizes=&quot;196x196&quot; /&gt;&lt;meta name=&quot;referrer&quot; content=&quot;default&quot; id=&quot;meta_referrer&quot; /&gt;&lt;meta name=&quot;theme-color&quot; content=&quot;#3b5998&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; data-bootloader-hash=&quot;/JFhj&quot; href=&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yN/l/0,cross/nIERhz-idh1.css&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; data-bootloader-hash=&quot;zr2Wc&quot; href=&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y4/l/0,cross/JV275TX50FN.css&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; data-bootloader-hash=&quot;RiKn+&quot; href=&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yy/l/0,cross/xhhKVogF05K.css&quot; /&gt;&lt;script id=&quot;u_0_f&quot;&gt;function envFlush(a){function b(c){for(var d in a)c[d]=a[d];}if(window.requireLazy){window.requireLazy(['Env'],b);}else{window.Env=window.Env||{};b(window.Env);}}envFlush({&quot;defer_cookies&quot;:true,&quot;timeslice_heartbeat_config&quot;:{&quot;pollIntervalMs&quot;:33,&quot;idleGapThresholdMs&quot;:60,&quot;ignoredTimesliceNames&quot;:{&quot;requestAnimationFrame&quot;:true,&quot;Event listenHandler mousemove&quot;:true,&quot;Event listenHandler mouseover&quot;:true,&quot;Event listenHandler mouseout&quot;:true,&quot;Event listenHandler scroll&quot;:true},&quot;enableOnRequire&quot;:true},&quot;shouldLogCounters&quot;:true,&quot;timeslice_categories&quot;:{&quot;react_render&quot;:true,&quot;reflow&quot;:true}});&lt;/script&gt;&lt;script&gt;window.DEFER_COOKIES=true;;
+
+document.domain = 'facebook.com';if(/^#~?!(?:\/?[\w\.-])+\/?(?:\?|$)/.test(location.hash))location.replace(location.hash.substr(location.hash.indexOf('!')+1));window.FB_GKS={&quot;mobile_chrono_selector&quot;:true,&quot;mobile_js_show_debug&quot;:false,&quot;mobile_js_log_error&quot;:false,&quot;m_js_log_history&quot;:false,&quot;js_nocatch&quot;:false,&quot;moulder_feed_hide_toggle&quot;:false,&quot;m_onephase_home&quot;:true,&quot;local_storage_cache&quot;:false,&quot;mtouch_composer_no_autoresize&quot;:true,&quot;m_js_crossorigin_attribute&quot;:true};window.FB_QES={};&lt;/script&gt;&lt;script&gt;__DEV__=0;&lt;/script&gt;&lt;script id=&quot;u_0_g&quot; crossorigin=&quot;anonymous&quot; src=&quot;https://static.xx.fbcdn.net/rsrc.php/v3iuD54/yO/l/en_US/Cv0vpqaZ6tZ.js&quot; data-bootloader-hash=&quot;EpqiB&quot;&gt;&lt;/script&gt;&lt;meta name=&quot;description&quot; content=&quot;Create an account or log into Facebook. Connect with friends, family and other people you know. Share photos and videos, send messages and get updates.&quot; /&gt;&lt;link rel=&quot;canonical&quot; href=&quot;https://www.facebook.com/&quot; /&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://static.xx.fbcdn.net/rsrc.php/v3inMy4/yv/l/en_US/ROlm51plvGc.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yK/r/70MJaUM4XPS.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/iJktFSfU3_9.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y-/r/_FB3cTyOmO3.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/3DJSYZHQd5S.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body tabindex=&quot;0&quot; class=&quot;touch x2 android _fzu _50-3 iframe acw portrait&quot; style=&quot;min-height: 640px; background-color: rgb(255, 255, 255);&quot;&gt;&lt;script id=&quot;u_0_e&quot;&gt;(function(a){a.__updateOrientation=function(){var b=!!a.orientation&amp;amp;&amp;amp;a.orientation!==180,c=document.body;if(c)c.className=c.className.replace(/(^|\s)(landscape|portrait)(\s|$)/g,' ')+' '+(b?'landscape':'portrait');return b;};})(window);&lt;/script&gt;&lt;div id=&quot;viewport&quot; style=&quot;min-height: 640px;&quot;&gt;&lt;h1 style=&quot;display:block;height:0;overflow:hidden;position:absolute;width:0;padding:0&quot;&gt;Facebook&lt;/h1&gt;&lt;div id=&quot;page&quot;&gt;&lt;div class=&quot;_129_&quot; id=&quot;header-notices&quot;&gt;&lt;div class=&quot;_2nsj&quot; id=&quot;u_0_9&quot;&gt;To personalize content, tailor and measure ads, and provide a safer experience, we use cookies. By tapping on the site, you agree to our use of cookies on and off Facebook. Learn more, including about controls: &lt;a class=&quot;_2nsi&quot; href=&quot;https://m.facebook.com/policies/cookies/?refid=8&quot; id=&quot;cpn-pv-link&quot; data-pv=&quot;2&quot;&gt;Cookies Policy&lt;/a&gt;.&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;_4g33 _52we _52z5&quot; id=&quot;header&quot;&gt;&lt;div class=&quot;_4g34 _52z6&quot; data-sigil=&quot;mChromeHeaderCenter&quot;&gt;&lt;a href=&quot;/login/?refid=8&quot;&gt;&lt;i class=&quot;img sp_VnhTqgxHygx_3x sx_4b6014&quot;&gt;&lt;u&gt;facebook&lt;/u&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;_5soa acw&quot; id=&quot;root&quot; role=&quot;main&quot; data-sigil=&quot;context-layer-root content-pane&quot; style=&quot;min-height: 640px;&quot;&gt;&lt;div class=&quot;_4g33&quot;&gt;&lt;div class=&quot;_4g34&quot; id=&quot;u_0_0&quot;&gt;&lt;div class=&quot;_5yd0 _2ph- _5yd1&quot; style=&quot;display: none;&quot; data-sigil=&quot;m_login_notice&quot;&gt;&lt;div class=&quot;_52jd&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;aclb&quot;&gt;&lt;div data-sigil=&quot;m_login_upsell&quot;&gt;&lt;/div&gt;&lt;div class=&quot;_5rut&quot;&gt;&lt;form method=&quot;post&quot; action=&quot;https://m.facebook.com/login/async/?refsrc=https%3A%2F%2Fwww.facebook.com%2F&amp;amp;lwv=100&quot; class=&quot;mobile-login-form _5spm&quot; id=&quot;u_0_1&quot; novalidate=&quot;1&quot; data-sigil=&quot;m_login_form&quot; data-autoid=&quot;autoid_1&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;lsd&quot; value=&quot;AVrjUfPS&quot; autocomplete=&quot;off&quot; /&gt;&lt;input type=&quot;hidden&quot; name=&quot;m_ts&quot; value=&quot;1501507063&quot; /&gt;&lt;input type=&quot;hidden&quot; name=&quot;li&quot; value=&quot;9i1_WbywBHm35djS_KfWMmcv&quot; /&gt;&lt;input type=&quot;hidden&quot; name=&quot;try_number&quot; value=&quot;0&quot; data-sigil=&quot;m_login_try_number&quot; /&gt;&lt;input type=&quot;hidden&quot; name=&quot;unrecognized_tries&quot; value=&quot;0&quot; data-sigil=&quot;m_login_unrecognized_tries&quot; /&gt;&lt;div class=&quot;_56be _5sob&quot;&gt;&lt;div class=&quot;_55wo _55x2 _56bf&quot;&gt;&lt;div data-sigil=&quot;login_identify_step_element&quot;&gt;&lt;input autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; type=&quot;email&quot; class=&quot;_56bg _4u9z _5ruq&quot; name=&quot;email&quot; placeholder=&quot;Email or Phone&quot; data-sigil=&quot;m_login_email&quot; /&gt;&lt;/div&gt;&lt;div data-sigil=&quot;login_password_step_element&quot;&gt;&lt;div class=&quot;_1upc _mg8&quot; data-sigil=&quot;m_login_password&quot;&gt;&lt;div class=&quot;_4g33&quot;&gt;&lt;div class=&quot;_4g34 _5i2i _52we&quot;&gt;&lt;div class=&quot;_5xu4&quot;&gt;&lt;input autocorrect=&quot;off&quot; autocapitalize=&quot;off&quot; class=&quot;_56bg _4u9z _27z2&quot; name=&quot;pass&quot; placeholder=&quot;Password&quot; id=&quot;u_0_2&quot; type=&quot;password&quot; data-sigil=&quot;password-plain-text-toggle-input&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;_5s61 _216i _5i2i _52we&quot;&gt;&lt;div class=&quot;_5xu4&quot;&gt;&lt;div class=&quot;_2pi9&quot; id=&quot;u_0_3&quot; style=&quot;display:none&quot;&gt;&lt;a href=&quot;#&quot; data-sigil=&quot;password-plain-text-toggle&quot;&gt;&lt;span class=&quot;mfss&quot; id=&quot;u_0_4&quot; style=&quot;display:none&quot;&gt;HIDE&lt;/span&gt;&lt;span class=&quot;mfss&quot; id=&quot;u_0_5&quot;&gt;SHOW&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;_2pie&quot; style=&quot;text-align:center;&quot;&gt;&lt;div id=&quot;u_0_6&quot; data-sigil=&quot;login_password_step_element&quot;&gt;&lt;button type=&quot;button&quot; value=&quot;Log In&quot; class=&quot;_54k8 _52jh _56bs _56b_ _56bw _56bu&quot; name=&quot;login&quot; id=&quot;u_0_7&quot; data-sigil=&quot;touchable m_login_button&quot; data-autoid=&quot;autoid_3&quot;&gt;&lt;span class=&quot;_55sr&quot;&gt;Log In&lt;/span&gt;&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;_xo8&quot;&gt;&lt;/div&gt;&lt;noscript&gt;&amp;lt;input type=&quot;hidden&quot; name=&quot;_fb_noscript&quot; value=&quot;true&quot; /&amp;gt;&lt;/noscript&gt;&lt;/form&gt;&lt;div data-sigil=&quot;login_identify_step_element&quot;&gt;&lt;div class=&quot;_43mg&quot;&gt;&lt;span class=&quot;_43mh&quot;&gt;or&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;_52jj _5t3b&quot; id=&quot;u_0_8&quot;&gt;&lt;a class=&quot;_5t3c btn btnS medBtn mfsm touchable&quot; role=&quot;button&quot; id=&quot;signup-button&quot; data-sigil=&quot;m_reg_button blocking-touchable&quot; data-autoid=&quot;autoid_2&quot;&gt;Create New Account&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;div data-sigil=&quot;m_login_more_links&quot;&gt;&lt;div class=&quot;other-links&quot;&gt;&lt;ul class=&quot;_5pkb _55wp&quot;&gt;&lt;li&gt;&lt;span class=&quot;mfss fcg&quot;&gt;&lt;a href=&quot;/recover/initiate/?c=https%3A%2F%2Fm.facebook.com%2F%3Frefsrc%3Dhttps%253A%252F%252Fwww.facebook.com%252F&amp;amp;lwv=100&amp;amp;refid=8&quot; id=&quot;forgot-password-link&quot;&gt;Forgot Password?&lt;/a&gt;&lt;span aria-hidden=&quot;true&quot;&gt; &middot; &lt;/span&gt;&lt;a class=&quot;sec&quot; href=&quot;/help/?refid=8&quot; id=&quot;help-link&quot;&gt;Help Center&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div class=&quot;_55wr _5ui2&quot;&gt;&lt;div class=&quot;_5dpw&quot;&gt;&lt;div class=&quot;_5ui3&quot; data-nocookies=&quot;1&quot; id=&quot;locale-selector&quot; data-sigil=&quot;language_selector marea&quot;&gt;&lt;div class=&quot;_4g33&quot;&gt;&lt;div class=&quot;_4g34&quot;&gt;&lt;span class=&quot;_52jc _52j9 _52jh _3ztb&quot;&gt;English (US)&lt;/span&gt;&lt;div class=&quot;_3ztc&quot;&gt;&lt;span class=&quot;_52jc&quot;&gt;&lt;a href=&quot;/a/language.php?l=tr_TR&amp;amp;lref=https%3A%2F%2Fm.facebook.com%2F%3Frefsrc%3Dhttps%253A%252F%252Fwww.facebook.com%252F&amp;amp;gfid=AQAIlTWamHbXKCWU&amp;amp;refid=8&quot;&gt;T&uuml;rk&ccedil;e&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;_3ztc&quot;&gt;&lt;span class=&quot;_52jc&quot;&gt;&lt;a href=&quot;/a/language.php?l=it_IT&amp;amp;lref=https%3A%2F%2Fm.facebook.com%2F%3Frefsrc%3Dhttps%253A%252F%252Fwww.facebook.com%252F&amp;amp;gfid=AQD6tBU-NSJKS-6o&amp;amp;refid=8&quot;&gt;Italiano&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;_3ztc&quot;&gt;&lt;span class=&quot;_52jc&quot;&gt;&lt;a href=&quot;/a/language.php?l=pt_BR&amp;amp;lref=https%3A%2F%2Fm.facebook.com%2F%3Frefsrc%3Dhttps%253A%252F%252Fwww.facebook.com%252F&amp;amp;gfid=AQAdzzeZpT9bZTMN&amp;amp;refid=8&quot;&gt;Portugu&ecirc;s (Brasil)&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;_4g34&quot;&gt;&lt;div class=&quot;_3ztc&quot;&gt;&lt;span class=&quot;_52jc&quot;&gt;&lt;a href=&quot;/a/language.php?l=de_DE&amp;amp;lref=https%3A%2F%2Fm.facebook.com%2F%3Frefsrc%3Dhttps%253A%252F%252Fwww.facebook.com%252F&amp;amp;gfid=AQAK2SSeVt7LkAuE&amp;amp;refid=8&quot;&gt;Deutsch&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;_3ztc&quot;&gt;&lt;span class=&quot;_52jc&quot;&gt;&lt;a href=&quot;/a/language.php?l=pl_PL&amp;amp;lref=https%3A%2F%2Fm.facebook.com%2F%3Frefsrc%3Dhttps%253A%252F%252Fwww.facebook.com%252F&amp;amp;gfid=AQD_Vvbzwtijf9Ap&amp;amp;refid=8&quot;&gt;Polski&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;_3ztc&quot;&gt;&lt;span class=&quot;_52jc&quot;&gt;&lt;a href=&quot;/a/language.php?l=es_LA&amp;amp;lref=https%3A%2F%2Fm.facebook.com%2F%3Frefsrc%3Dhttps%253A%252F%252Fwww.facebook.com%252F&amp;amp;gfid=AQDlsIphnp_tyDqX&amp;amp;refid=8&quot;&gt;Espa&ntilde;ol&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;&lt;a href=&quot;/language.php?n=https%3A%2F%2Fm.facebook.com%2F%3Frefsrc%3Dhttps%253A%252F%252Fwww.facebook.com%252F&amp;amp;refid=8&quot;&gt;&lt;div class=&quot;_3j87 _1rrd _3ztd&quot;&gt;&lt;i class=&quot;img sp_VnhTqgxHygx_3x sx_c8ed55&quot;&gt;&lt;/i&gt;&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;_5ui4&quot;&gt;&lt;span class=&quot;mfss fcg&quot;&gt;Facebook &copy;2017&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;viewportArea _2v9s&quot; id=&quot;u_0_a&quot; style=&quot;display:none&quot; data-sigil=&quot;marea&quot;&gt;&lt;div class=&quot;_5vsg&quot; id=&quot;u_0_b&quot; style=&quot;max-height: 180px;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;_5vsh&quot; id=&quot;u_0_c&quot; style=&quot;max-height: 320px;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;_5v5d fcg&quot;&gt;&lt;div class=&quot;_2so _2sq _2ss img _50cg&quot; data-animtype=&quot;1&quot; data-sigil=&quot;m-loading-indicator-animate m-loading-indicator-root&quot;&gt;&lt;/div&gt;Loading...&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;viewportArea aclb&quot; id=&quot;mErrorView&quot; style=&quot;display:none&quot; data-sigil=&quot;marea&quot;&gt;&lt;div class=&quot;container&quot;&gt;&lt;div class=&quot;image&quot;&gt;&lt;/div&gt;&lt;div class=&quot;message&quot; data-sigil=&quot;error-message&quot;&gt;&lt;/div&gt;&lt;a class=&quot;link&quot; data-sigil=&quot;MPageError:retry&quot;&gt;Try Again&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div id=&quot;static_templates&quot;&gt;&lt;div class=&quot;mDialog&quot; id=&quot;modalDialog&quot; style=&quot;display:none&quot; data-sigil=&quot; context-layer-root&quot; data-autoid=&quot;autoid_4&quot;&gt;&lt;div class=&quot;_52z5 _451a mFuturePageHeader _1uh1 firstStep titled&quot; id=&quot;mDialogHeader&quot;&gt;&lt;div class=&quot;_4g33 _52we&quot;&gt;&lt;div class=&quot;_5s61&quot;&gt;&lt;div class=&quot;_52z7&quot;&gt;&lt;button type=&quot;submit&quot; value=&quot;Cancel&quot; class=&quot;cancelButton btn btnD bgb mfss touchable&quot; data-sigil=&quot;dialog-cancel-button blocking-touchable&quot;&gt;Cancel&lt;/button&gt;&lt;button type=&quot;submit&quot; value=&quot;Back&quot; class=&quot;backButton btn btnI bgb mfss touchable iconOnly&quot; aria-label=&quot;Back&quot; data-sigil=&quot;dialog-back-button blocking-touchable&quot;&gt;&lt;i class=&quot;img sp_VnhTqgxHygx_3x sx_60e2ba&quot; style=&quot;margin-top: 2px;&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;_4g34&quot;&gt;&lt;div class=&quot;_52z6&quot;&gt;&lt;div class=&quot;_50l4 mfsl fcw&quot; id=&quot;m-future-page-header-title&quot; data-sigil=&quot;m-dialog-header-title dialog-title&quot;&gt;Loading...&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;_5s61&quot;&gt;&lt;div class=&quot;_52z8&quot; id=&quot;modalDialogHeaderButtons&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div id=&quot;pagelet_0_0&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;modalDialogView&quot; id=&quot;modalDialogView&quot;&gt;&lt;/div&gt;&lt;div class=&quot;_5v5d _5v5e fcg&quot; id=&quot;dialogSpinner&quot;&gt;&lt;div class=&quot;_2so _2sq _2ss img _50cg&quot; data-animtype=&quot;1&quot; id=&quot;u_0_d&quot; data-sigil=&quot;m-loading-indicator-animate m-loading-indicator-root&quot;&gt;&lt;/div&gt;Loading...&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;script id=&quot;u_0_h&quot;&gt;require(&quot;TimeSlice&quot;).guard(function() {(require(&quot;ServerJSDefine&quot;)).handleDefines([[&quot;MRequestConfig&quot;,[],{&quot;dtsg&quot;:{&quot;token&quot;:&quot;AQHH-7Vnpt5m:AQGgf5NaHrx_&quot;,&quot;valid_for&quot;:86400,&quot;expire&quot;:1501593463},&quot;lsd&quot;:&quot;AVrjUfPS&quot;,&quot;checkResponseOrigin&quot;:true,&quot;checkResponseToken&quot;:true,&quot;ajaxResponseToken&quot;:{&quot;secret&quot;:&quot;yG_kMa04Zuc7ipZMLEKv98gdArHU3TD6&quot;,&quot;encrypted&quot;:&quot;AYnCaiN13AAjH4evq8GG0LDXcMlwK4lMnieApfbKnBc_jPLYb8GHTyYJI9Dv4EL51OQ47vizV_MVoBQBOu-O_oG8GmPStKe_pPMaY4HmW2Mm-A&quot;}},51],[&quot;PromiseUsePolyfillSetImmediateGK&quot;,[],{&quot;www_always_use_polyfill_setimmediate&quot;:false},2190],[&quot;ZeroRewriteRules&quot;,[],{&quot;rewrite_rules&quot;:{},&quot;whitelist&quot;:{&quot;\/hr\/r&quot;:1,&quot;\/hr\/p&quot;:1,&quot;\/zero\/unsupported_browser\/&quot;:1,&quot;\/zero\/policy\/optin&quot;:1,&quot;\/zero\/optin\/write\/&quot;:1,&quot;\/zero\/optin\/legal\/&quot;:1,&quot;\/zero\/optin\/free\/&quot;:1,&quot;\/about\/privacy\/&quot;:1,&quot;\/zero\/toggle\/welcome\/&quot;:1,&quot;\/work\/landing&quot;:1,&quot;\/work\/login\/&quot;:1,&quot;\/work\/email\/&quot;:1,&quot;\/ai.php&quot;:1,&quot;\/js_dialog_resources\/dialog_descriptions_android.json&quot;:1,&quot;\/connect\/jsdialog\/MPlatformAppInvitesJSDialog\/&quot;:1,&quot;\/connect\/jsdialog\/MPlatformOAuthShimJSDialog\/&quot;:1,&quot;\/connect\/jsdialog\/MPlatformLikeJSDialog\/&quot;:1,&quot;\/qp\/interstitial\/&quot;:1,&quot;\/qp\/action\/redirect\/&quot;:1,&quot;\/qp\/action\/close\/&quot;:1,&quot;\/zero\/support\/ineligible\/&quot;:1,&quot;\/zero_balance_redirect\/&quot;:1,&quot;\/zero_balance_redirect&quot;:1,&quot;\/l.php&quot;:1,&quot;\/lsr.php&quot;:1,&quot;\/ajax\/dtsg\/&quot;:1,&quot;\/checkpoint\/block\/&quot;:1,&quot;\/exitdsite&quot;:1,&quot;\/zero\/balance\/pixel\/&quot;:1,&quot;\/zero\/balance\/&quot;:1,&quot;\/zero\/balance\/carrier_landing\/&quot;:1,&quot;\/tr&quot;:1,&quot;\/tr\/&quot;:1,&quot;\/sem_campaigns\/sem_pixel_test\/&quot;:1,&quot;\/bookmarks\/flyout\/body\/&quot;:1,&quot;\/zero\/subno\/&quot;:1,&quot;\/confirmemail.php&quot;:1}},1478],[&quot;ZeroCategoryHeader&quot;,[],{},1127],[&quot;CurrentCommunityInitialData&quot;,[],{},490],[&quot;ResourceWatcher&quot;,[],{&quot;module&quot;:null},1404],[&quot;MPageletUtilities&quot;,[],{},358],[&quot;MJSEnvironment&quot;,[],{&quot;IS_APPLE_WEBKIT_IOS&quot;:false,&quot;IS_TABLET&quot;:false,&quot;IS_ANDROID&quot;:true,&quot;IS_CHROME&quot;:true,&quot;IS_FIREFOX&quot;:false,&quot;IS_WINDOWS_PHONE&quot;:false,&quot;OS_VERSION&quot;:4.4,&quot;PIXEL_RATIO&quot;:3,&quot;BROWSER_NAME&quot;:&quot;Chrome Mobile&quot;},46],[&quot;MBanzaiConfig&quot;,[],{&quot;EXPIRY&quot;:86400000,&quot;MAX_SIZE&quot;:10000,&quot;MAX_WAIT&quot;:30000,&quot;RESTORE_WAIT&quot;:30000,&quot;gks&quot;:{&quot;boosted_component&quot;:true,&quot;mchannel_jumpstart&quot;:true,&quot;platform_oauth_client_events&quot;:true,&quot;visibility_tracking&quot;:true,&quot;boosted_pagelikes&quot;:true,&quot;gqls_web_logging&quot;:true},&quot;blacklist&quot;:[&quot;time_spent&quot;]},32],[&quot;MSession&quot;,[],{&quot;useAngora&quot;:false,&quot;logoutURL&quot;:&quot;\/logout.php?h=AfflvwYzhJdmZ3oL&amp;amp;t=1501507063&quot;,&quot;push_phase&quot;:&quot;C3&quot;},52],[&quot;ServiceWorkerBackgroundSyncGK&quot;,[],{&quot;background_sync_sw&quot;:false},1628],[&quot;ServerNonce&quot;,[],{&quot;ServerNonce&quot;:&quot;SHluTOAGoq_O9gwV1Fc6Hu&quot;},141],[&quot;TimeSliceInteractionSV&quot;,[],{&quot;default_rate&quot;:1000,&quot;lite_default_rate&quot;:100,&quot;interaction_to_coinflip&quot;:{&quot;async_request&quot;:0,&quot;video_psr&quot;:10,&quot;video_stall&quot;:25,&quot;snowlift_open_autoclosed&quot;:0,&quot;Event&quot;:40,&quot;cms_editor&quot;:1,&quot;page_messaging_shortlist&quot;:1,&quot;ffd_chart_loading&quot;:1},&quot;interaction_to_lite_coinflip&quot;:{&quot;Event&quot;:1},&quot;enable_heartbeat&quot;:true,&quot;maxBlockMergeDuration&quot;:1,&quot;maxBlockMergeDistance&quot;:1},2609],[&quot;ServiceWorkerBackgroundSyncBanzaiGK&quot;,[],{&quot;sw_background_sync_banzai&quot;:false},1621],[&quot;CookieCoreConfig&quot;,[],{&quot;a11y&quot;:{},&quot;act&quot;:{},&quot;c_user&quot;:{},&quot;ddid&quot;:{&quot;p&quot;:&quot;\/deferreddeeplink\/&quot;,&quot;t&quot;:2419200},&quot;dpr&quot;:{},&quot;js_ver&quot;:{&quot;t&quot;:604800},&quot;locale&quot;:{&quot;t&quot;:604800},&quot;noscript&quot;:{},&quot;presence&quot;:{},&quot;sW&quot;:{},&quot;sfau&quot;:{},&quot;wd&quot;:{},&quot;x-referer&quot;:{},&quot;x-src&quot;:{&quot;t&quot;:1}},2104],[&quot;CoreWarningGK&quot;,[],{&quot;forceWarning&quot;:false},725],[&quot;SiteData&quot;,[],{&quot;server_revision&quot;:3190793,&quot;client_revision&quot;:3190793,&quot;tier&quot;:&quot;&quot;,&quot;push_phase&quot;:&quot;C3&quot;,&quot;pkg_cohort&quot;:&quot;FW_EXP:mtouch_pkg&quot;,&quot;pkg_cohort_key&quot;:&quot;__pc&quot;,&quot;haste_site&quot;:&quot;mobile&quot;,&quot;be_mode&quot;:-1,&quot;be_key&quot;:&quot;__be&quot;,&quot;is_rtl&quot;:false,&quot;features&quot;:&quot;j0&quot;,&quot;vip&quot;:&quot;31.13.92.37&quot;},317],[&quot;CurrentUserInitialData&quot;,[],{&quot;USER_ID&quot;:&quot;0&quot;,&quot;ACCOUNT_ID&quot;:&quot;0&quot;,&quot;NAME&quot;:&quot;&quot;,&quot;SHORT_NAME&quot;:null},270],[&quot;ReactGK&quot;,[],{&quot;fiberAsyncScheduling&quot;:false,&quot;unmountOnBeforeClearCanvas&quot;:true},998],[&quot;UserAgentData&quot;,[],{&quot;browserArchitecture&quot;:&quot;32&quot;,&quot;browserFullVersion&quot;:&quot;38.0.2125.114&quot;,&quot;browserMinorVersion&quot;:0,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:38,&quot;deviceName&quot;:&quot;Unknown&quot;,&quot;engineName&quot;:&quot;WebKit&quot;,&quot;engineVersion&quot;:&quot;537.36&quot;,&quot;platformArchitecture&quot;:&quot;32&quot;,&quot;platformName&quot;:&quot;Android&quot;,&quot;platformVersion&quot;:&quot;4&quot;,&quot;platformFullVersion&quot;:&quot;4.4.4&quot;},527],[&quot;MLoadingIndicatorSigils&quot;,[],{&quot;ANIMATE&quot;:&quot;m-loading-indicator-animate&quot;,&quot;ROOT&quot;:&quot;m-loading-indicator-root&quot;},279],[&quot;MobileAppDetect&quot;,[],{&quot;is_mobile_app&quot;:false,&quot;is_pages_manager&quot;:false,&quot;is_facebook_for_android&quot;:false,&quot;is_facebook_for_android_in_app_browser&quot;:false,&quot;is_wilde&quot;:false,&quot;is_kaios&quot;:false},1109],[&quot;MWebStorageMonsterWhiteList&quot;,[],{&quot;whitelist&quot;:[&quot;^Banzai$&quot;,&quot;^bz&quot;,&quot;^mutex&quot;,&quot;^msys&quot;,&quot;^sp_pi$&quot;,&quot;^\\:userchooser\\:osessusers$&quot;,&quot;^\\:userchooser\\:settings$&quot;,&quot;^[0-9]+:powereditor:&quot;,&quot;^Bandicoot\\:&quot;,&quot;^brands\\:console\\:config$&quot;,&quot;^CacheStorageVersion$&quot;,&quot;^consoleEnabled$&quot;,&quot;^_video_$&quot;,&quot;^vc_&quot;,&quot;^_showMDevConsole$&quot;,&quot;^_ctv_$&quot;,&quot;^ga_client_id$&quot;]},254],[&quot;MTouchableSyntheticClickGK&quot;,[],{&quot;USE_SYNTHETIC_CLICK&quot;:true},368],[&quot;ErrorDebugHooks&quot;,[],{&quot;SnapShotHook&quot;:null},185],[&quot;FbtLogger&quot;,[],{&quot;logger&quot;:null},288],[&quot;FbtResultGK&quot;,[],{&quot;shouldReturnFbtResult&quot;:true,&quot;inlineMode&quot;:&quot;NO_INLINE&quot;},876],[&quot;IntlViewerContext&quot;,[],{&quot;GENDER&quot;:50331648},772],[&quot;NumberFormatConfig&quot;,[],{&quot;decimalSeparator&quot;:&quot;.&quot;,&quot;numberDelimiter&quot;:&quot;,&quot;,&quot;minDigitsForThousandsSeparator&quot;:4,&quot;switchImplementationGK&quot;:true,&quot;standardDecimalPatternInfo&quot;:{&quot;primaryGroupSize&quot;:3,&quot;secondaryGroupSize&quot;:3},&quot;numberingSystemData&quot;:null},54],[&quot;IntlPhonologicalRules&quot;,[],{&quot;meta&quot;:{&quot;\/_B\/&quot;:&quot;([.,!?\\s]|^)&quot;,&quot;\/_E\/&quot;:&quot;([.,!?\\s]|$)&quot;},&quot;patterns&quot;:{&quot;\/\u0001(.*)('|&amp;amp;#039;)s\u0001(?:'|&amp;amp;#039;)s(.*)\/&quot;:&quot;\u0001$1$2s\u0001$3&quot;,&quot;\/_\u0001([^\u0001]*)\u0001\/&quot;:&quot;javascript&quot;}},1496],[&quot;FWLoader&quot;,[],{},278],[&quot;MPageControllerGating&quot;,[],{&quot;shouldDeferUntilCertainNoRedirect&quot;:false},2023],[&quot;MRenderingSchedulerConfig&quot;,[],{&quot;delayNormalResources&quot;:false,&quot;isDisplayJSEnabled&quot;:false},1978],[&quot;JSErrorExtra&quot;,[],{},251],[&quot;JSErrorPlatformColumns&quot;,[],{},255],[&quot;MarauderConfig&quot;,[],{&quot;app_version&quot;:&quot;3190793&quot;,&quot;gk_enabled&quot;:false},31],[&quot;ImmediateActiveSecondsConfig&quot;,[],{&quot;sampling_rate&quot;:0},423],[&quot;FbtQTOverrides&quot;,[],{&quot;overrides&quot;:{}},551]]);new (require(&quot;ServerJS&quot;))().setServerFeatures(&quot;j0&quot;).handle({});}, &quot;ServerJS define&quot;, {&quot;root&quot;:true})();(require(&quot;Bootloader&quot;)._pickupPageResources || function(){})();require(&quot;MCoreInit&quot;).init({&quot;clearMCache&quot;:false,&quot;deferredResources&quot;:[&quot;\/JFhj&quot;,&quot;zr2Wc&quot;,&quot;tlXSQ&quot;,&quot;EIDr4&quot;,&quot;CN7dX&quot;,&quot;RiKn+&quot;,&quot;+Rdqi&quot;,&quot;\/vE7l&quot;],&quot;hideLocationBar&quot;:true,&quot;onafterload&quot;:&quot;&quot;,&quot;onload&quot;:&quot;&quot;,&quot;serverJSData&quot;:{&quot;elements&quot;:[[&quot;__elem_de5177dd_0_0&quot;,&quot;u_0_0&quot;,1],[&quot;__elem_921b58ef_0_0&quot;,&quot;u_0_1&quot;,1],[&quot;__elem_e24cb174_0_0&quot;,&quot;u_0_2&quot;,1],[&quot;__elem_7216e2ae_0_2&quot;,&quot;u_0_3&quot;,1],[&quot;__elem_e03291d5_0_1&quot;,&quot;u_0_4&quot;,1],[&quot;__elem_e03291d5_0_0&quot;,&quot;u_0_5&quot;,1],[&quot;__elem_7216e2ae_0_0&quot;,&quot;u_0_6&quot;,1],[&quot;__elem_be66b106_0_0&quot;,&quot;u_0_7&quot;,1],[&quot;__elem_7216e2ae_0_1&quot;,&quot;u_0_8&quot;,1],[&quot;__elem_7216e2ae_0_3&quot;,&quot;u_0_9&quot;,1],[&quot;__elem_eed16c0a_0_0&quot;,&quot;u_0_a&quot;,1],[&quot;__elem_a588f507_0_0&quot;,&quot;u_0_b&quot;,1],[&quot;__elem_a588f507_0_1&quot;,&quot;u_0_c&quot;,1]],&quot;require&quot;:[[&quot;MLoginView&quot;,&quot;disableOnSubmit&quot;,[&quot;__elem_921b58ef_0_0&quot;,&quot;__elem_7216e2ae_0_0&quot;],[{&quot;__m&quot;:&quot;__elem_921b58ef_0_0&quot;},{&quot;__m&quot;:&quot;__elem_7216e2ae_0_0&quot;}],[]],[&quot;MLoginController&quot;,&quot;initRegButton&quot;,[&quot;__elem_7216e2ae_0_1&quot;],[{&quot;root&quot;:{&quot;__m&quot;:&quot;__elem_7216e2ae_0_1&quot;},&quot;regURI&quot;:&quot;\/reg\/?cid=103&quot;,&quot;useRegToLogin&quot;:true}],[]],[&quot;MLoginController&quot;,&quot;initLoginForm&quot;,[&quot;__elem_de5177dd_0_0&quot;],[{&quot;root&quot;:{&quot;__m&quot;:&quot;__elem_de5177dd_0_0&quot;},&quot;ajaxURI&quot;:&quot;https:\/\/m.facebook.com\/login\/async\/?refsrc=https\u00253A\u00252F\u00252Fwww.facebook.com\u00252F&amp;amp;lwv=100&quot;,&quot;rapidFeedbackUri&quot;:null,&quot;clearOnDelete&quot;:false,&quot;listenKeyDown&quot;:false,&quot;isTwoStepsLogin&quot;:false,&quot;passwordStepDelayMilliSeconds&quot;:0,&quot;isActionLoggingEnabled&quot;:false}],[]],[&quot;MPasswordPlainTextToggle&quot;,&quot;init&quot;,[&quot;__elem_e24cb174_0_0&quot;,&quot;__elem_7216e2ae_0_2&quot;,&quot;__elem_e03291d5_0_0&quot;,&quot;__elem_e03291d5_0_1&quot;],[{&quot;__m&quot;:&quot;__elem_e24cb174_0_0&quot;},{&quot;__m&quot;:&quot;__elem_7216e2ae_0_2&quot;},{&quot;__m&quot;:&quot;__elem_e03291d5_0_0&quot;},{&quot;__m&quot;:&quot;__elem_e03291d5_0_1&quot;}],[]],[&quot;ServiceWorkerLoginAndLogoutListener&quot;,&quot;listen&quot;,[&quot;__elem_be66b106_0_0&quot;],[{&quot;__m&quot;:&quot;__elem_be66b106_0_0&quot;},&quot;login&quot;,&quot;\/sw?s=push&quot;,null],[]],[&quot;MTouchable&quot;],[&quot;MBlockingTouchable&quot;],[&quot;MScrollPositionSaver&quot;],[&quot;MCookieUseBannerController&quot;,&quot;init&quot;,[&quot;__elem_7216e2ae_0_3&quot;],[{&quot;__m&quot;:&quot;__elem_7216e2ae_0_3&quot;},null],[]],[&quot;LoadingIndicator&quot;,&quot;init&quot;,[&quot;__elem_eed16c0a_0_0&quot;,&quot;__elem_a588f507_0_0&quot;,&quot;__elem_a588f507_0_1&quot;],[{&quot;__m&quot;:&quot;__elem_eed16c0a_0_0&quot;},{&quot;__m&quot;:&quot;__elem_a588f507_0_0&quot;},{&quot;__m&quot;:&quot;__elem_a588f507_0_1&quot;}],[]],[&quot;MPageError&quot;],[&quot;MLogoutClearCache&quot;],[&quot;MPageHeaderAccessibility&quot;],[&quot;MLoadingIndicator&quot;,&quot;init&quot;,[],[&quot;u_0_d&quot;],[]],[&quot;MPrelude&quot;],[&quot;DeferredCookie&quot;,&quot;addToQueue&quot;,[],[&quot;_js_datr&quot;,&quot;9i1_WaSkTBeCDuubNCTzw2Ga&quot;,63072000000,&quot;\/&quot;,true,true,true],[]],[&quot;DeferredCookie&quot;,&quot;addToQueue&quot;,[],[&quot;_js_reg_fb_ref&quot;,&quot;https:\/\/m.facebook.com\/?refsrc=https\u00253A\u00252F\u00252Fwww.facebook.com\u00252F&quot;,0,&quot;\/&quot;,true,true,true],[]],[&quot;DeferredCookie&quot;,&quot;addToQueue&quot;,[],[&quot;_js_reg_fb_gate&quot;,&quot;https:\/\/m.facebook.com\/?refsrc=https\u00253A\u00252F\u00252Fwww.facebook.com\u00252F&quot;,0,&quot;\/&quot;,true,true,true],[]],[&quot;DeferredCookie&quot;,&quot;addToQueue&quot;,[],[&quot;_js_fr&quot;,&quot;0Tig8DPANZhb2bWJF..BZfy32.LY.AAA.0.0.BZfy32.AWVFGoxZ&quot;,7776000000,&quot;\/&quot;,false,true,true],[]],[&quot;ErrorUtils&quot;],[&quot;MLogger&quot;],[&quot;MExceptionHandler&quot;],[&quot;LogHistoryListeners&quot;],[&quot;Artillery&quot;],[&quot;ScriptPath&quot;,&quot;set&quot;,[],[&quot;\/wap\/index.php&quot;,&quot;4e6eefd9&quot;,{&quot;imp_id&quot;:&quot;6aac167a&quot;}],[]],[&quot;MLogging&quot;,&quot;main&quot;,[],[{&quot;refid&quot;:8}],[]],[&quot;RemoteDevice&quot;,&quot;init&quot;,[],[],[]],[&quot;MModalDialogInit&quot;],[&quot;MVerifyCache&quot;,&quot;main&quot;,[],[{&quot;viewer&quot;:0}],[]],[&quot;ScriptPathLogger&quot;,&quot;startLogging&quot;,[],[],[]],[&quot;MTimeSpentBitArrayLogger&quot;,&quot;init&quot;,[],[&quot;m&quot;],[]],[&quot;NavigationMetrics&quot;],[&quot;PerfXLogger&quot;]]},&quot;isWildeWeb&quot;:false,&quot;isFacewebAndroid&quot;:false,&quot;ixData&quot;:{},&quot;bootloadable&quot;:{&quot;Banzai&quot;:{&quot;resources&quot;:[],&quot;module&quot;:1},&quot;ResourceTimingBootloaderHelper&quot;:{&quot;resources&quot;:[&quot;h04LL&quot;,&quot;TRprm&quot;,&quot;tlXSQ&quot;,&quot;SZAiO&quot;],&quot;module&quot;:1},&quot;TimeSliceHelper&quot;:{&quot;resources&quot;:[&quot;tlXSQ&quot;,&quot;+RIAv&quot;,&quot;h04LL&quot;],&quot;module&quot;:1},&quot;BanzaiODS&quot;:{&quot;resources&quot;:[&quot;tlXSQ&quot;],&quot;module&quot;:1}},&quot;resource_map&quot;:{&quot;h04LL&quot;:{&quot;type&quot;:&quot;js&quot;,&quot;src&quot;:&quot;https:\/\/static.xx.fbcdn.net\/rsrc.php\/v3\/y9\/r\/AH9j3r2XOba.js&quot;},&quot;TRprm&quot;:{&quot;type&quot;:&quot;js&quot;,&quot;src&quot;:&quot;https:\/\/static.xx.fbcdn.net\/rsrc.php\/v3\/yk\/r\/Pz3BRovqldR.js&quot;},&quot;tlXSQ&quot;:{&quot;type&quot;:&quot;js&quot;,&quot;src&quot;:&quot;https:\/\/static.xx.fbcdn.net\/rsrc.php\/v3inMy4\/yv\/l\/en_US\/ROlm51plvGc.js&quot;},&quot;SZAiO&quot;:{&quot;type&quot;:&quot;js&quot;,&quot;src&quot;:&quot;https:\/\/static.xx.fbcdn.net\/rsrc.php\/v3iS4j4\/yk\/l\/en_US\/NznzP3Tq5g8.js&quot;},&quot;+RIAv&quot;:{&quot;type&quot;:&quot;js&quot;,&quot;src&quot;:&quot;https:\/\/static.xx.fbcdn.net\/rsrc.php\/v3\/yg\/r\/UpdjU16PSWD.js&quot;},&quot;EIDr4&quot;:{&quot;type&quot;:&quot;js&quot;,&quot;src&quot;:&quot;https:\/\/static.xx.fbcdn.net\/rsrc.php\/v3\/yK\/r\/70MJaUM4XPS.js&quot;},&quot;CN7dX&quot;:{&quot;type&quot;:&quot;js&quot;,&quot;src&quot;:&quot;https:\/\/static.xx.fbcdn.net\/rsrc.php\/v3\/y9\/r\/iJktFSfU3_9.js&quot;},&quot;+Rdqi&quot;:{&quot;type&quot;:&quot;js&quot;,&quot;src&quot;:&quot;https:\/\/static.xx.fbcdn.net\/rsrc.php\/v3\/y-\/r\/_FB3cTyOmO3.js&quot;},&quot;\/vE7l&quot;:{&quot;type&quot;:&quot;js&quot;,&quot;src&quot;:&quot;https:\/\/static.xx.fbcdn.net\/rsrc.php\/v3\/yL\/r\/3DJSYZHQd5S.js&quot;}}});&lt;/script&gt;&lt;script id=&quot;u_0_i&quot;&gt;require(&quot;MRenderingScheduler&quot;).preArrive({&quot;name&quot;:&quot;pagelet_0_0&quot;,&quot;serverlid&quot;:&quot;6448923730934330192-0&quot;})&lt;/script&gt;&lt;script id=&quot;u_0_j&quot;&gt;require(&quot;MRenderingScheduler&quot;).getInstance().schedule({&quot;id&quot;:&quot;pagelet_0_0&quot;,&quot;pageletConfig&quot;:{&quot;lid&quot;:&quot;6448923730934330192-60001&quot;,&quot;serverlid&quot;:&quot;6448923730934330192-0&quot;,&quot;name&quot;:&quot;pagelet_0_0&quot;,&quot;pass&quot;:4,&quot;serverJSData&quot;:{},&quot;onload&quot;:&quot;&quot;,&quot;onafterload&quot;:&quot;&quot;,&quot;scheduledMarkupIndex&quot;:0,&quot;templateContainer&quot;:&quot;static_templates&quot;,&quot;templates&quot;:{&quot;__html&quot;:&quot;&quot;},&quot;ixData&quot;:{},&quot;resource_map&quot;:{},&quot;bootloadable&quot;:{},&quot;type&quot;:&quot;chrome&quot;},&quot;displayResources&quot;:[],&quot;normalResources&quot;:[],&quot;content&quot;:{&quot;__html&quot;:&quot;&quot;}}, function() {require(&quot;NavigationMetrics&quot;).postPagelet(false, &quot;6448923730934330192-0&quot;);});&lt;/script&gt;                                                                                                                                                                                                                                                                                                                              &lt;script id=&quot;u_0_l&quot;&gt;require(&quot;Bootloader&quot;).setResourceMap({});&lt;/script&gt;&lt;script id=&quot;u_0_k&quot;&gt;require(&quot;MRenderingScheduler&quot;).getInstance().setPageletCount(1);require(&quot;NavigationMetrics&quot;).setPage({&quot;page&quot;:&quot;\/wap\/index.php&quot;,&quot;page_type&quot;:&quot;normal&quot;,&quot;page_uri&quot;:&quot;https:\/\/m.facebook.com\/?refsrc=https\u00253A\u00252F\u00252Fwww.facebook.com\u00252F&amp;amp;_rdr&quot;,&quot;serverLID&quot;:&quot;6448923730934330192-0&quot;});require(&quot;TimeSlice&quot;).guard(function() {(require(&quot;ServerJSDefine&quot;)).handleDefines([]);new (require(&quot;ServerJS&quot;))().setServerFeatures(&quot;j0&quot;).handle({});}, &quot;ServerJS define&quot;, {&quot;root&quot;:true})();(function() {require(&quot;MRenderingScheduler&quot;).getInstance().addPostSchedulerFunction(function() {require(&quot;NavigationMetrics&quot;).postScheduler(&quot;\/wap\/index.php&quot;, &quot;normal&quot;);});})();&lt;/script&gt;                                                                                                                                                                                                                                                                 &lt;/body&gt;&lt;/html&gt;</pre>
+			</div>
+			<div class="tab-pane" id='interactions'>
+				<h2>Interactions</h2>
+				<table class="table table-bordered table-striped">
+					<tbody>
+						<tr>
+							<th>Xpath</th>
+							<th>Destination</tg>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/SPAN[1]/A[1]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/A[1]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/BUTTON[2]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/SPAN[1]/A[1]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/UL[1]/LI[1]/SPAN[1]/A[2]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/SPAN[1]/A[1]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/A[1]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/A[1]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[1]/DIV[2]/A[1]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/BUTTON[1]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/SPAN[1]/A[1]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/FORM[1]/DIV[2]/DIV[1]/BUTTON[1]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[3]/SPAN[1]/A[1]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/SPAN[1]/A[1]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/UL[1]/LI[1]/SPAN[1]/A[1]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+												<tr>
+							<td>/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/FORM[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/A[1]</td>
+							<td><a href=".html"></a></td>
+						</tr>
+											</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../lib/shCore.js"></script>
+	<script type="text/javascript" src="../lib/shBrushXml.js"></script>
+	<script type="text/javascript" src="../lib/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+	<script type="text/javascript">
+    	$(document).ready(function() {
+			SyntaxHighlighter.all()
+
+			$('#tabs a').click(function (e) {
+		  		e.preventDefault();
+		  		$(this).tab('show');
+			})
+		});
+    	
+    	$('.hovers').tooltip({
+    	    placement: function(a, element) {
+    	        var position = $(element).position();
+    	        if (position.left > 515) {
+    	            return "left";
+    	        }
+    	        if (position.left < 515) {
+    	            return "right";
+    	        }
+    	        if (position.top < 110){
+    	            return "bottom";
+    	        }
+    	        return "top";
+    	    }
+    	});
+	</script>
+</body>
+</html>

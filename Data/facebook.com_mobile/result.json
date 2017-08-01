@@ -1,0 +1,141 @@
+{
+  "states" : {
+    "index" : {
+      "name" : "index",
+      "url" : "https://www.facebook.com/",
+      "candidateElements" : [ {
+        "top" : 450,
+        "left" : 246,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/SPAN[1]/A[1]",
+        "width" : 32,
+        "height" : 16
+      }, {
+        "top" : 485,
+        "left" : 180,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/A[1]",
+        "width" : 166,
+        "height" : 20
+      }, {
+        "top" : 1,
+        "left" : 0,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/BUTTON[2]",
+        "width" : 0,
+        "height" : 0
+      }, {
+        "top" : 450,
+        "left" : 78,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/SPAN[1]/A[1]",
+        "width" : 36,
+        "height" : 16
+      }, {
+        "top" : 364,
+        "left" : 201,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/UL[1]/LI[1]/SPAN[1]/A[2]",
+        "width" : 62,
+        "height" : 16
+      }, {
+        "top" : 432,
+        "left" : 241,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/SPAN[1]/A[1]",
+        "width" : 44,
+        "height" : 16
+      }, {
+        "top" : 1,
+        "left" : 0,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/A[1]",
+        "width" : 0,
+        "height" : 0
+      }, {
+        "top" : 89,
+        "left" : 129,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/A[1]",
+        "width" : 102,
+        "height" : 19
+      }, {
+        "top" : 315,
+        "left" : 99,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[1]/DIV[2]/A[1]",
+        "width" : 160,
+        "height" : 36
+      }, {
+        "top" : 1,
+        "left" : 0,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/BUTTON[1]",
+        "width" : 0,
+        "height" : 0
+      }, {
+        "top" : 468,
+        "left" : 77,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/SPAN[1]/A[1]",
+        "width" : 40,
+        "height" : 16
+      }, {
+        "top" : 238,
+        "left" : 16,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/FORM[1]/DIV[2]/DIV[1]/BUTTON[1]",
+        "width" : 328,
+        "height" : 36
+      }, {
+        "top" : 468,
+        "left" : 241,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[3]/SPAN[1]/A[1]",
+        "width" : 42,
+        "height" : 16
+      }, {
+        "top" : 486,
+        "left" : 48,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/SPAN[1]/A[1]",
+        "width" : 96,
+        "height" : 16
+      }, {
+        "top" : 364,
+        "left" : 95,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]/DIV[1]/UL[1]/LI[1]/SPAN[1]/A[1]",
+        "width" : 96,
+        "height" : 16
+      }, {
+        "top" : 1,
+        "left" : 0,
+        "xpath" : "/HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]/DIV[2]/FORM[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/A[1]",
+        "width" : 0,
+        "height" : 0
+      } ],
+      "fanIn" : 0,
+      "fanOut" : 0,
+      "id" : 0,
+      "failedEvents" : [ "xpath /HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/BUTTON[2]", "xpath /HTML[1]/BODY[1]/DIV[1]/DIV[1]/DIV[5]/DIV[1]/A[1]" ]
+    }
+  },
+  "edges" : [ ],
+  "statistics" : {
+    "duration" : "10 seconds",
+    "crawlPaths" : 7,
+    "averageDomSize" : "9.832 kB",
+    "edges" : 0,
+    "startDate" : "2017-07-31 15:16:02 CEST",
+    "stateStats" : {
+      "leastFanOut" : {
+        "id" : "index",
+        "count" : 0
+      },
+      "leastFanIn" : {
+        "id" : "index",
+        "count" : 0
+      },
+      "mostFanOut" : {
+        "id" : "index",
+        "count" : 0
+      },
+      "mostFanIn" : {
+        "id" : "index",
+        "count" : 0
+      },
+      "totalNumberOfStates" : 1,
+      "urls" : {
+        "https://www.facebook.com/" : [ "index" ]
+      }
+    },
+    "failedEvents" : 2
+  },
+  "exitStatus" : "EXHAUSTED"
+}

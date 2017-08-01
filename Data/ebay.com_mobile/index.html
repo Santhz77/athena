@@ -1,0 +1,1216 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Crawl overview</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="CrawlJax">
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/bootstrap-responsive.min.css" rel="stylesheet">
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<style>
+html,body {
+	height: 100%;
+}
+
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -40px;	
+}
+
+#push, footer {
+	height: 40px;
+}
+
+footer {
+	background-color: #f5f5f5;
+}
+
+footer small {
+	display: inline;
+	margin-top: 10px;
+}
+
+.url-table td {
+	word-wrap: break-word;
+	max-width: 700px;
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+	.url-table td {
+		max-width: 500px;
+	}
+}
+
+@media ( max-width : 767px) {
+	#footer {
+		margin-left: -20px;
+		margin-right: -20px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	
+	.url-table td {
+		max-width: 450px;
+	}
+}
+
+
+#wrap>.container {
+	padding-top: 60px;
+}
+
+.panel-right {
+	position: absolute;
+	right: 10px;
+	top: 70px;
+	left: auto;
+	display: block;
+	background-color: rgb(255, 255, 255);
+	background-color: rgba(255, 255, 255, .9);
+	max-width: 300px;
+}
+
+.panel-right dd {
+	text-transform: capitalize;
+	word-wrap: break-word;
+}
+</style>
+</head>
+<body>
+<body>
+	<div id="wrap">
+		<nav class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+							<a class="brand" href="#">Crawl overview</a>
+						<ul class="nav">
+									<li class="active"><a href="#graph" class="nav-link">State graph</a></li>
+					<li><a href="#statistics" class="nav-link">Statistics</a></li>
+					<li><a href="#urls" class="nav-link">URL's</a></li>
+					<li><a href="#config" class="nav-link">crawler.testcase.facebook.setup.Configuration</a></li>
+							</ul>
+			<div class="nav pull-right">
+				<a href="#" class="btn graphBtn" id='pauseButton' data-toggle="tooltip" data-placement="bottom" title="Pause the graph movement"><i class="icon-pause"></i></a>
+				<a href="#" class="btn graphBtn" rel="popover" data-placement="bottom"  data-original-title="What to do"><i class='icon-question-sign'></i></a>
+				<div style="display: none" id='popup-content'>
+					<p>You can double click a state to inspect it further.</p>
+					<p>Clicking an edge gives more details on the state transition.</p>
+					<p>Use your mouse to zoom in and out by scrolling, or drag the states and view around.</p>
+				</div>
+				<a href="result.json" class="btn" data-toggle="tooltip" data-placement="bottom" title="Download result as JSON"><i class='icon-download'></i></a>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+</nav>		<div class="container page" id="container-graph" style="width: 100%; padding-top: 40px;">
+			<div class="popover fade panel-right">
+				<div class="popover-inner">
+					<h3 class="popover-title">Edge info</h3>
+					<div class="popover-content">
+						<dl>
+							<dt>Element name</dt>
+							<dd name='elemName'></dd>
+						</dl>
+						<dl>
+							<dt>From</dt>
+							<dd name='from'></dd>
+						</dl>
+						<dl>
+							<dt>To</dt>
+							<dd name='to'></dd>
+						</dl>
+						<dl>
+							<dt>Identified by</dt>
+							<dd name='id'></dd>
+						</dl>
+						<dl>
+							<dt>Element</dt>
+							<dd name='element' style="text-transform: none;"></dd>
+						</dl>
+						<dl>
+							<dt>Event type</dt>
+							<dd name='eventType'></dd>
+						</dl>
+						<button class="btn btn-small" id='hideButton'>Hide</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container page" id="container-statistics" style="display: none;">
+			
+<section id='crawlResults'>
+	<div class="page-header">
+		<h1>Crawl results</h1>
+	</div>
+	<table class="table table-bordered table-striped">
+		<tbody>
+			<tr>
+				<th>Crawl time</th>
+				<td>1 minute 16 seconds</td>
+			</tr>
+			<tr>
+				<th>Exit status</th>
+				<td>Maximum states passed</td>
+			<tr>
+				<th>Number of states</th>
+				<td>15</td>
+			</tr>
+			<tr>
+				<th><a href="#urls" class="nav-link">URL's visited</a></th>
+				<td>9</td>
+			</tr>
+			<tr>
+				<th>Number of edges</th>
+				<td>14</td>
+			</tr>
+			<tr>
+				<th>Number of crawl paths</th>
+				<td>26</td>
+			</tr>
+			<tr>
+				<th>Failed events</th>
+				<td>22</td>
+			<tr>
+				<th>Average DOM length</th>
+				<td>49.65 kB</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+
+<section id='highs-and-low'>
+	<div class="page-header">
+		<h1>Highs and lows</h1>
+	</div>
+	<table class="table table-bordered table-striped">
+		<tbody>
+			<tr>
+				<th>Highest fan-out</th> 
+								<td><a href="states/state1.html">state1</a></td>
+				<td>13</td>
+			</tr>
+			<tr>
+				<th>Lowest fan-out</th> 				<td><a href="states/state9.html">state9</a></td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<th>Highest fan-in</th> 				<td><a href="states/state9.html">state9</a></td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<th>Lowest fan-in</th> 				<td><a href="states/index.html">index</a></td>
+				<td>0</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+		</div>
+		<div class="container page" id="container-urls" style="display: none;">
+			<div class="page-header">
+	<h1>URL's visited</h1>
+</div>
+<table class="table table-bordered table-striped url-table">
+	<tbody>
+				<tr>
+			<td><a href="http://www.ebay.com/sell/results?keywords=Video%20Games&fn=Video%20Games&catID=139973">http://www.ebay.com/sell/results?keywords=Video%20Games&fn=Video%20Games&catID=139973</a></td>
+			<td> <a
+				href="states/state9.html">state9</a>, 			</td>
+		</tr>
+				<tr>
+			<td><a href="https://www.ebay.com/sh/landing">https://www.ebay.com/sh/landing</a></td>
+			<td> <a
+				href="states/state6.html">state6</a>,  <a
+				href="states/state7.html">state7</a>, 			</td>
+		</tr>
+				<tr>
+			<td><a href="https://www.ebay.com/">https://www.ebay.com/</a></td>
+			<td> <a
+				href="states/index.html">index</a>, 			</td>
+		</tr>
+				<tr>
+			<td><a href="http://www.ebay.com/sl/sell">http://www.ebay.com/sl/sell</a></td>
+			<td> <a
+				href="states/state5.html">state5</a>,  <a
+				href="states/state8.html">state8</a>,  <a
+				href="states/state2.html">state2</a>,  <a
+				href="states/state1.html">state1</a>,  <a
+				href="states/state12.html">state12</a>,  <a
+				href="states/state14.html">state14</a>, 			</td>
+		</tr>
+				<tr>
+			<td><a href="http://www.ebay.com/sell/results?keywords=Women%27s%20Shoes&fn=Women%27s%20Shoes">http://www.ebay.com/sell/results?keywords=Women%27s%20Shoes&fn=Women%27s%20Shoes</a></td>
+			<td> <a
+				href="states/state4.html">state4</a>, 			</td>
+		</tr>
+				<tr>
+			<td><a href="http://www.ebay.com/sell/results?keywords=Guitars&fn=Guitars">http://www.ebay.com/sell/results?keywords=Guitars&fn=Guitars</a></td>
+			<td> <a
+				href="states/state3.html">state3</a>, 			</td>
+		</tr>
+				<tr>
+			<td><a href="http://www.ebay.com/s/phone">http://www.ebay.com/s/phone</a></td>
+			<td> <a
+				href="states/state13.html">state13</a>, 			</td>
+		</tr>
+				<tr>
+			<td><a href="http://www.ebay.com/sell/results?keywords=Watches&fn=Watches">http://www.ebay.com/sell/results?keywords=Watches&fn=Watches</a></td>
+			<td> <a
+				href="states/state11.html">state11</a>, 			</td>
+		</tr>
+				<tr>
+			<td><a href="http://www.ebay.com/s/tablet">http://www.ebay.com/s/tablet</a></td>
+			<td> <a
+				href="states/state10.html">state10</a>, 			</td>
+		</tr>
+			</tbody>
+</table>
+		</div>
+		<div class="container page" id="container-config" style="display: none;">
+			<section id='crawlConfig'>
+	<div class="page-header">
+		<h1>Crawl configuration</h1>
+	</div>
+	<table class="table table-bordered table-striped">
+		<tbody>
+						<tr>
+				<td>Url</td> 
+								<td>https://www.ebay.com/</td> 
+							</tr>
+						<tr>
+				<td>Basic Auth Url</td> 
+								<td>null</td> 
+							</tr>
+						<tr>
+				<td>Browser Config</td> 
+								<td>1 browsers of type CHROME using builder crawler.testcase.facebook.setup.MyBrowserProvider@73eb8672</td>
+							</tr>
+						<tr>
+				<td>Plugins</td> 
+								<td><ul><li>CrawlOverview</li><li>crawler.testcase.facebook.setup.ExtractHar</li><li>crawler.testcase.facebook.setup.EndCrawling</li></ul></td>
+							</tr>
+						<tr>
+				<td>Proxy crawler.testcase.facebook.setup.Configuration</td>
+								<td>NOTHING</td> 
+							</tr>
+						<tr>
+				<td>Crawl Rules</td> 
+								<td><pre><code>{
+  &quot;crawlEvents&quot; : [ &quot;click&quot; ],
+  &quot;invariants&quot; : [ ],
+  &quot;oracleComparators&quot; : [ {
+    &quot;preConditions&quot; : [ ],
+    &quot;id&quot; : &quot;SimpleComparator&quot;,
+    &quot;oracle&quot; : { }
+  } ],
+  &quot;ignoredFrameIdentifiers&quot; : [ ],
+  &quot;preCrawlConfig&quot; : {
+    &quot;waitConditions&quot; : [ ],
+    &quot;crawlConditions&quot; : [ ],
+    &quot;includedElements&quot; : [ {
+      &quot;tagName&quot; : &quot;A&quot;,
+      &quot;id&quot; : &quot;id640113647&quot;,
+      &quot;eventType&quot; : &quot;click&quot;,
+      &quot;eventableCondition&quot; : null,
+      &quot;withXpathExpression&quot; : null
+    }, {
+      &quot;tagName&quot; : &quot;BUTTON&quot;,
+      &quot;id&quot; : &quot;id124323713&quot;,
+      &quot;eventType&quot; : &quot;click&quot;,
+      &quot;eventableCondition&quot; : null,
+      &quot;withXpathExpression&quot; : null
+    }, {
+      &quot;tagName&quot; : &quot;INPUT&quot;,
+      &quot;id&quot; : &quot;id2011997442&quot;,
+      &quot;eventType&quot; : &quot;click&quot;,
+      &quot;eventableCondition&quot; : {
+        &quot;id&quot; : &quot;id2011997442&quot;,
+        &quot;conditions&quot; : [ ],
+        &quot;inXPath&quot; : &quot;//INPUT[@type='submit']&quot;,
+        &quot;linkedInputFields&quot; : [ ]
+      },
+      &quot;withXpathExpression&quot; : &quot;//INPUT[@type='submit']&quot;
+    }, {
+      &quot;tagName&quot; : &quot;INPUT&quot;,
+      &quot;id&quot; : &quot;id843512726&quot;,
+      &quot;eventType&quot; : &quot;click&quot;,
+      &quot;eventableCondition&quot; : {
+        &quot;id&quot; : &quot;id843512726&quot;,
+        &quot;conditions&quot; : [ ],
+        &quot;inXPath&quot; : &quot;//INPUT[@type='button']&quot;,
+        &quot;linkedInputFields&quot; : [ ]
+      },
+      &quot;withXpathExpression&quot; : &quot;//INPUT[@type='button']&quot;
+    } ],
+    &quot;excludedElements&quot; : [ ],
+    &quot;filterAttributeNames&quot; : [ &quot;closure_hashcode_(\\w)*&quot;, &quot;jquery[0-9]+&quot; ]
+  },
+  &quot;randomInputInForms&quot; : false,
+  &quot;inputSpecification&quot; : {
+    &quot;crawlElements&quot; : [ ],
+    &quot;formFieldNames&quot; : { },
+    &quot;formFieldValues&quot; : { }
+  },
+  &quot;testInvariantsWhileCrawling&quot; : true,
+  &quot;clickOnce&quot; : true,
+  &quot;randomizeCandidateElements&quot; : true,
+  &quot;crawlHiddenAnchors&quot; : false,
+  &quot;waitAfterReloadUrl&quot; : 60,
+  &quot;waitAfterEvent&quot; : 60,
+  &quot;allCrawlElements&quot; : [ {
+    &quot;tagName&quot; : &quot;A&quot;,
+    &quot;id&quot; : &quot;id640113647&quot;,
+    &quot;eventType&quot; : &quot;click&quot;,
+    &quot;eventableCondition&quot; : null,
+    &quot;withXpathExpression&quot; : null
+  }, {
+    &quot;tagName&quot; : &quot;BUTTON&quot;,
+    &quot;id&quot; : &quot;id124323713&quot;,
+    &quot;eventType&quot; : &quot;click&quot;,
+    &quot;eventableCondition&quot; : null,
+    &quot;withXpathExpression&quot; : null
+  }, {
+    &quot;tagName&quot; : &quot;INPUT&quot;,
+    &quot;id&quot; : &quot;id2011997442&quot;,
+    &quot;eventType&quot; : &quot;click&quot;,
+    &quot;eventableCondition&quot; : {
+      &quot;id&quot; : &quot;id2011997442&quot;,
+      &quot;conditions&quot; : [ ],
+      &quot;inXPath&quot; : &quot;//INPUT[@type='submit']&quot;,
+      &quot;linkedInputFields&quot; : [ ]
+    },
+    &quot;withXpathExpression&quot; : &quot;//INPUT[@type='submit']&quot;
+  }, {
+    &quot;tagName&quot; : &quot;INPUT&quot;,
+    &quot;id&quot; : &quot;id843512726&quot;,
+    &quot;eventType&quot; : &quot;click&quot;,
+    &quot;eventableCondition&quot; : {
+      &quot;id&quot; : &quot;id843512726&quot;,
+      &quot;conditions&quot; : [ ],
+      &quot;inXPath&quot; : &quot;//INPUT[@type='button']&quot;,
+      &quot;linkedInputFields&quot; : [ ]
+    },
+    &quot;withXpathExpression&quot; : &quot;//INPUT[@type='button']&quot;
+  } ]
+}</code></pre></td> 
+							</tr>
+						<tr>
+				<td>Maximum States</td> 
+								<td>15</td> 
+							</tr>
+						<tr>
+				<td>Maximum Depth</td> 
+								<td>2</td> 
+							</tr>
+						<tr>
+				<td>Maximum Runtime</td> 
+								<td>3600000</td> 
+							</tr>
+						<tr>
+				<td>Output Dir</td> 
+								<td>Data/ebay.com_mobile</td> 
+							</tr>
+						<tr>
+				<td>State Vertex Factory</td> 
+								<td>null</td> 
+							</tr>
+					</tbody>
+	</table>
+</section>
+<section id='versionInfo'>
+	<div class="page-header">
+		<h1>Version info</h1>
+	</div>
+	<table class="table table-bordered table-striped">
+		<tbody>
+			<tr>
+				<td>Crawljax version</td>
+				<td>3.7-SNAPSHOT</td>
+			</tr>
+			<tr>
+				<td>Git revision</td>
+				<td>${git.commit.id}</td>
+			</tr>
+			<tr>
+				<td><a href="https://www.kernel.org/pub/software/scm/git/docs/git-describe.html">Git describe</a></td>
+				<td>${git.commit.id.describe}</td>
+			</tr>
+			<tr>
+				<td>Build time</td>
+				<td><time>${git.build.time}</time></td>
+			</tr>
+		</tbody>
+	</table>
+</section>		</div>
+		<div id="push"></div>
+	</div>
+	<footer>
+		<div class="container">
+			<small class="pull-left muted">Crawl of <a href="https://www.ebay.com/">https://www.ebay.com/</a> at Mon Jul 31 12:00:01 CEST 2017</small>
+			<small class="pull-right muted">Crawled by <a href="http://crawljax.com">Crawljax</a> 3.7-SNAPSHOT</small>
+		</div>
+	</footer>
+	
+	<script src="lib/jquery-2.0.3.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<script src="lib/vivagraph.min.js"></script>
+	<script src="js/graphbuilder.js"></script>
+	<script>
+		var edges = [ {
+  "from" : "index",
+  "to" : "state1",
+  "text" : "Sell an item",
+  "id" : "xpath /HTML[1]/BODY[1]/FOOTER[1]/SECTION[1]/DIV[4]/A[1]",
+  "element" : "Element{node=[A: null], tag=A, text=Sell an item, attributes={_sp=p2056088.m2429.l4895, href=http://www.ebay.com/sl/sell}}",
+  "eventType" : "click"
+}, {
+  "from" : "state1",
+  "to" : "state2",
+  "text" : "Create a listing",
+  "id" : "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/BUTTON[1]",
+  "element" : "Element{node=[BUTTON: null], tag=BUTTON, text=Create a listing, attributes={class=btn btn--primary inline-blk sell-it-button, data-w-onclick=handleButtonClick_SellIt_CTA|hero, type=button}}",
+  "eventType" : "click"
+}, {
+  "from" : "state1",
+  "to" : "state3",
+  "text" : "Guitars",
+  "id" : "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[8]/DIV[1]/UL[1]/LI[7]/A[1]",
+  "element" : "Element{node=[A: null], tag=A, text=Guitars, attributes={_sp=p.2380787.m.4368.s.7993, _sp_data=Guitars, href=/sell/results?keywords=Guitars&fn=Guitars}}",
+  "eventType" : "click"
+}, {
+  "from" : "state1",
+  "to" : "state4",
+  "text" : "Women's Shoes",
+  "id" : "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[8]/DIV[1]/UL[1]/LI[4]/A[1]",
+  "element" : "Element{node=[A: null], tag=A, text=Women's Shoes, attributes={_sp=p.2380787.m.4368.s.7993, _sp_data=Women's Shoes, href=/sell/results?keywords=Women%27s%20Shoes&fn=Women%27s%20Shoes}}",
+  "eventType" : "click"
+}, {
+  "from" : "state1",
+  "to" : "state5",
+  "text" : "Play video- Glenn Roland Fadner, III",
+  "id" : "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[9]/DIV[1]/ARTICLE[2]/DIV[1]/BUTTON[1]",
+  "element" : "Element{node=[BUTTON: null], tag=BUTTON, text=Play video- Glenn Roland Fadner, III, attributes={_sp=p.2380787.s.7994, _sp_data=https://www.youtube.com/embed/cP74W9HB004, class=l-community__video-link btn btn--small, data-video=https://www.youtube.com/embed/cP74W9HB004, type=button}}",
+  "eventType" : "click"
+}, {
+  "from" : "state1",
+  "to" : "state6",
+  "text" : "Looking to sell professionally?Check out our tools.",
+  "id" : "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[1]/A[1]",
+  "element" : "Element{node=[A: null], tag=A, text=Looking to sell professionally?Check out our tools., attributes={_sp=p.2380787.s.7987, class=l-hero__valet-subline, href=https://www.ebay.com/sh/landing}}",
+  "eventType" : "click"
+}, {
+  "from" : "state1",
+  "to" : "state7",
+  "text" : "Learn more about professional sellingLearn more",
+  "id" : "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[5]/DIV[1]/DIV[2]/DIV[1]/A[1]",
+  "element" : "Element{node=[A: null], tag=A, text=Learn more about professional sellingLearn more, attributes={_sp=p.2380787.s.7992, class=l-b2c__CTA btn btn--primary btn--faux, href=https://www.ebay.com/sh/landing, target=_self}}",
+  "eventType" : "click"
+}, {
+  "from" : "state1",
+  "to" : "state8",
+  "text" : "Start selling",
+  "id" : "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[12]/DIV[1]/BUTTON[1]",
+  "element" : "Element{node=[BUTTON: null], tag=BUTTON, text=Start selling, attributes={class=l-anchor__CTA btn btn--primary, data-w-onclick=startSelling|anchor, type=button}}",
+  "eventType" : "click"
+}, {
+  "from" : "state1",
+  "to" : "state9",
+  "text" : "Video Games",
+  "id" : "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[8]/DIV[1]/UL[1]/LI[8]/A[1]",
+  "element" : "Element{node=[A: null], tag=A, text=Video Games, attributes={_sp=p.2380787.m.4368.s.7993, _sp_data=Video Games, href=/sell/results?keywords=Video%20Games&fn=Video%20Games&catID=139973}}",
+  "eventType" : "click"
+}, {
+  "from" : "state1",
+  "to" : "state10",
+  "text" : "Tablets",
+  "id" : "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[8]/DIV[1]/UL[1]/LI[2]/A[1]",
+  "element" : "Element{node=[A: null], tag=A, text=Tablets, attributes={_sp=p.2380787.m.4368.s.7993, _sp_data=Tablets, href=http://www.ebay.com/s/tablet}}",
+  "eventType" : "click"
+}, {
+  "from" : "state1",
+  "to" : "state11",
+  "text" : "Watches",
+  "id" : "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[8]/DIV[1]/UL[1]/LI[5]/A[1]",
+  "element" : "Element{node=[A: null], tag=A, text=Watches, attributes={_sp=p.2380787.m.4368.s.7993, _sp_data=Watches, href=/sell/results?keywords=Watches&fn=Watches}}",
+  "eventType" : "click"
+}, {
+  "from" : "state1",
+  "to" : "state12",
+  "text" : "Go",
+  "id" : "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/BUTTON[1]",
+  "element" : "Element{node=[BUTTON: null], tag=BUTTON, text=Go, attributes={aria-hidden=true, class=btn btn--primary _sm_btn, data-w-onclick=handleSubmit|navigation-w0-searchbox, disabled=, id=navigation-w0-searchbox-3[0], type=button}}",
+  "eventType" : "click"
+}, {
+  "from" : "state1",
+  "to" : "state13",
+  "text" : "Phones",
+  "id" : "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[8]/DIV[1]/UL[1]/LI[1]/A[1]",
+  "element" : "Element{node=[A: null], tag=A, text=Phones, attributes={_sp=p.2380787.m.4368.s.7993, _sp_data=Phones, href=http://www.ebay.com/s/phone}}",
+  "eventType" : "click"
+}, {
+  "from" : "state1",
+  "to" : "state14",
+  "text" : "Play video- Sonya Lee Han",
+  "id" : "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[9]/DIV[1]/ARTICLE[3]/DIV[1]/BUTTON[1]",
+  "element" : "Element{node=[BUTTON: null], tag=BUTTON, text=Play video- Sonya Lee Han, attributes={_sp=p.2380787.s.7994, _sp_data=https://www.youtube.com/embed/YLWAHKUIEyM, class=l-community__video-link btn btn--small, data-video=https://www.youtube.com/embed/YLWAHKUIEyM, type=button}}",
+  "eventType" : "click"
+} ];
+		var states = {
+  "state9" : {
+    "name" : "state9",
+    "url" : "http://www.ebay.com/sell/results?keywords=Video%20Games&fn=Video%20Games&catID=139973",
+    "candidateElements" : [ ],
+    "fanIn" : 1,
+    "fanOut" : 0,
+    "id" : 9,
+    "failedEvents" : [ ]
+  },
+  "state6" : {
+    "name" : "state6",
+    "url" : "https://www.ebay.com/sh/landing",
+    "candidateElements" : [ ],
+    "fanIn" : 1,
+    "fanOut" : 0,
+    "id" : 6,
+    "failedEvents" : [ ]
+  },
+  "index" : {
+    "name" : "index",
+    "url" : "https://www.ebay.com/",
+    "candidateElements" : [ {
+      "top" : 1597,
+      "left" : 10,
+      "xpath" : "/HTML[1]/BODY[1]/FOOTER[1]/SECTION[1]/DIV[6]/A[1]",
+      "width" : 340,
+      "height" : 43
+    }, {
+      "top" : 1668,
+      "left" : 46,
+      "xpath" : "/HTML[1]/BODY[1]/FOOTER[1]/SECTION[2]/DIV[1]/A[1]",
+      "width" : 34,
+      "height" : 15
+    }, {
+      "top" : 556,
+      "left" : 1600,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[5]/DIV[1]/DIV[2]/DIV[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 626,
+      "left" : 1600,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[5]/DIV[1]/DIV[3]/DIV[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 528,
+      "left" : 601,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[2]/DIV[1]/DIV[2]/DIV[1]/A[1]",
+      "width" : 59,
+      "height" : 56
+    }, {
+      "top" : 598,
+      "left" : 601,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[2]/DIV[1]/DIV[3]/DIV[1]/A[1]",
+      "width" : 59,
+      "height" : 56
+    }, {
+      "top" : 626,
+      "left" : 1011,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[4]/DIV[1]/DIV[1]/DIV[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 682,
+      "left" : 268,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[1]/DIV[1]/DIV[4]/DIV[1]/A[1]",
+      "width" : 59,
+      "height" : 56
+    }, {
+      "top" : 542,
+      "left" : 268,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[1]/DIV[1]/DIV[2]/DIV[1]/A[1]",
+      "width" : 59,
+      "height" : 56
+    }, {
+      "top" : 710,
+      "left" : 1267,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[4]/DIV[1]/DIV[4]/DIV[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 1781,
+      "left" : 10,
+      "xpath" : "/HTML[1]/BODY[1]/FOOTER[1]/SECTION[1]/DIV[4]/A[1]",
+      "width" : 340,
+      "height" : 41
+    }, {
+      "top" : 570,
+      "left" : 934,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[3]/DIV[1]/DIV[2]/DIV[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 554,
+      "left" : 12,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[1]/DIV[1]/DIV[1]/DIV[1]/A[1]",
+      "width" : 242,
+      "height" : 172
+    }, {
+      "top" : 1932,
+      "left" : 247,
+      "xpath" : "/HTML[1]/BODY[1]/FOOTER[1]/SECTION[2]/DIV[1]/A[2]",
+      "width" : 66,
+      "height" : 15
+    }, {
+      "top" : 710,
+      "left" : 1600,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[5]/DIV[1]/DIV[4]/DIV[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 640,
+      "left" : 934,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[3]/DIV[1]/DIV[3]/DIV[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 640,
+      "left" : 678,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[3]/DIV[1]/DIV[1]/DIV[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 640,
+      "left" : 1267,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[4]/DIV[1]/DIV[3]/DIV[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 901,
+      "left" : 934,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[3]/DIV[1]/DIV[4]/DIV[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 74,
+      "left" : 9,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[2]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 873,
+      "left" : 601,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[2]/DIV[1]/DIV[4]/DIV[1]/A[1]",
+      "width" : 59,
+      "height" : 56
+    }, {
+      "top" : 831,
+      "left" : 1344,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[5]/DIV[1]/DIV[1]/DIV[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 803,
+      "left" : 268,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[1]/DIV[1]/DIV[3]/DIV[1]/A[1]",
+      "width" : 59,
+      "height" : 56
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 746,
+      "left" : 345,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[2]/DIV[1]/DIV[1]/DIV[1]/A[1]",
+      "width" : 242,
+      "height" : 169
+    }, {
+      "top" : 761,
+      "left" : 1267,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[4]/DIV[1]/DIV[2]/DIV[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 121,
+      "left" : 298,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[2]/A[2]",
+      "width" : 52,
+      "height" : 43
+    } ],
+    "fanIn" : 0,
+    "fanOut" : 1,
+    "id" : 0,
+    "failedEvents" : [ "xpath /HTML[1]/BODY[1]/FOOTER[1]/SECTION[1]/DIV[6]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[5]/DIV[1]/DIV[2]/DIV[1]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[2]/DIV[1]/DIV[2]/DIV[1]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[4]/DIV[1]/DIV[1]/DIV[1]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[1]/DIV[1]/DIV[2]/DIV[1]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[3]/DIV[1]/DIV[2]/DIV[1]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[3]/DIV[1]/DIV[3]/DIV[1]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[4]/DIV[1]/DIV[3]/DIV[1]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[2]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[5]/DIV[1]/DIV[1]/DIV[1]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[3]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[5]/DIV[1]/DIV[1]/DIV[4]/DIV[1]/UL[1]/LI[4]/DIV[1]/DIV[2]/DIV[1]/A[1]" ]
+  },
+  "state5" : {
+    "name" : "state5",
+    "url" : "http://www.ebay.com/sl/sell",
+    "candidateElements" : [ ],
+    "fanIn" : 1,
+    "fanOut" : 0,
+    "id" : 5,
+    "failedEvents" : [ ]
+  },
+  "state8" : {
+    "name" : "state8",
+    "url" : "http://www.ebay.com/sl/sell",
+    "candidateElements" : [ ],
+    "fanIn" : 1,
+    "fanOut" : 0,
+    "id" : 8,
+    "failedEvents" : [ ]
+  },
+  "state7" : {
+    "name" : "state7",
+    "url" : "https://www.ebay.com/sh/landing",
+    "candidateElements" : [ ],
+    "fanIn" : 1,
+    "fanOut" : 0,
+    "id" : 7,
+    "failedEvents" : [ ]
+  },
+  "state2" : {
+    "name" : "state2",
+    "url" : "http://www.ebay.com/sl/sell",
+    "candidateElements" : [ ],
+    "fanIn" : 1,
+    "fanOut" : 0,
+    "id" : 2,
+    "failedEvents" : [ ]
+  },
+  "state1" : {
+    "name" : "state1",
+    "url" : "http://www.ebay.com/sl/sell",
+    "candidateElements" : [ {
+      "top" : 245,
+      "left" : 66,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/BUTTON[1]",
+      "width" : 228,
+      "height" : 36
+    }, {
+      "top" : 299,
+      "left" : 295,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/BUTTON[1]",
+      "width" : 48,
+      "height" : 45
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/UL[1]/LI[1]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 5331,
+      "left" : 32,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[8]/DIV[1]/UL[1]/LI[7]/A[1]",
+      "width" : 140,
+      "height" : 200
+    }, {
+      "top" : 5131,
+      "left" : 187,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[8]/DIV[1]/UL[1]/LI[6]/A[1]",
+      "width" : 140,
+      "height" : 200
+    }, {
+      "top" : 4931,
+      "left" : 187,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[8]/DIV[1]/UL[1]/LI[4]/A[1]",
+      "width" : 140,
+      "height" : 200
+    }, {
+      "top" : 6615,
+      "left" : 35,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[9]/DIV[1]/ARTICLE[2]/DIV[1]/BUTTON[1]",
+      "width" : 107,
+      "height" : 32
+    }, {
+      "top" : 510,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[1]/A[1]",
+      "width" : 360,
+      "height" : 70
+    }, {
+      "top" : 0,
+      "left" : 10,
+      "xpath" : "/HTML[1]/BODY[1]/SECTION[1]/NAV[1]/A[1]",
+      "width" : 100,
+      "height" : 44
+    }, {
+      "top" : 3070,
+      "left" : 55,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[5]/DIV[1]/DIV[2]/DIV[1]/A[1]",
+      "width" : 250,
+      "height" : 44
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[9]/DIV[2]/DIV[1]/DIV[1]/BUTTON[2]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/UL[1]/LI[8]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[9]/DIV[2]/DIV[1]/DIV[1]/BUTTON[3]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 9053,
+      "left" : 57,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[12]/DIV[1]/BUTTON[1]",
+      "width" : 245,
+      "height" : 44
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/UL[1]/LI[5]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 5331,
+      "left" : 187,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[8]/DIV[1]/UL[1]/LI[8]/A[1]",
+      "width" : 140,
+      "height" : 200
+    }, {
+      "top" : 4731,
+      "left" : 187,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[8]/DIV[1]/UL[1]/LI[2]/A[1]",
+      "width" : 140,
+      "height" : 200
+    }, {
+      "top" : 5131,
+      "left" : 32,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[8]/DIV[1]/UL[1]/LI[5]/A[1]",
+      "width" : 140,
+      "height" : 200
+    }, {
+      "top" : 647,
+      "left" : 299,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/BUTTON[1]",
+      "width" : 53,
+      "height" : 42
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/UL[1]/LI[3]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/DIV[1]/A[1]",
+      "width" : 150,
+      "height" : 88
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[9]/DIV[2]/DIV[1]/DIV[1]/BUTTON[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 4731,
+      "left" : 32,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[8]/DIV[1]/UL[1]/LI[1]/A[1]",
+      "width" : 140,
+      "height" : 200
+    }, {
+      "top" : 7022,
+      "left" : 35,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[9]/DIV[1]/ARTICLE[3]/DIV[1]/BUTTON[1]",
+      "width" : 107,
+      "height" : 32
+    }, {
+      "top" : 410,
+      "left" : 66,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[1]/DIV[1]/DIV[1]/DIV[1]/DIV[1]/DIV[3]/A[1]",
+      "width" : 228,
+      "height" : 36
+    }, {
+      "top" : 6124,
+      "left" : 35,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[9]/DIV[1]/ARTICLE[1]/DIV[1]/BUTTON[1]",
+      "width" : 107,
+      "height" : 32
+    }, {
+      "top" : 3646,
+      "left" : 55,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[6]/DIV[1]/DIV[2]/A[1]",
+      "width" : 250,
+      "height" : 44
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/UL[1]/LI[2]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[9]/DIV[2]/DIV[1]/DIV[1]/HEADER[1]/BUTTON[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 8632,
+      "left" : 25,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[10]/DIV[1]/UL[1]/LI[7]/DIV[2]/SPAN[2]/A[1]",
+      "width" : 276,
+      "height" : 35
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/UL[1]/LI[7]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/UL[1]/LI[4]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[8]/DIV[1]/UL[1]/LI[9]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 407,
+      "left" : 155,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[2]/BUTTON[1]",
+      "width" : 53,
+      "height" : 16
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/UL[1]/LI[6]/A[1]",
+      "width" : 0,
+      "height" : 0
+    }, {
+      "top" : 0,
+      "left" : 0,
+      "xpath" : "/HTML[1]/BODY[1]/A[1]",
+      "width" : 1,
+      "height" : 1
+    } ],
+    "fanIn" : 1,
+    "fanOut" : 13,
+    "id" : 1,
+    "failedEvents" : [ "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[1]/DIV[1]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/BUTTON[1]", "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/UL[1]/LI[1]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[9]/DIV[2]/DIV[1]/DIV[1]/BUTTON[2]", "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/UL[1]/LI[8]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[9]/DIV[2]/DIV[1]/DIV[1]/BUTTON[3]", "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/UL[1]/LI[5]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/UL[1]/LI[3]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[2]/NAV[1]/DIV[1]/A[1]", "xpath /HTML[1]/BODY[1]/DIV[1]/SECTION[9]/DIV[2]/DIV[1]/DIV[1]/BUTTON[1]" ]
+  },
+  "state4" : {
+    "name" : "state4",
+    "url" : "http://www.ebay.com/sell/results?keywords=Women%27s%20Shoes&fn=Women%27s%20Shoes",
+    "candidateElements" : [ ],
+    "fanIn" : 1,
+    "fanOut" : 0,
+    "id" : 4,
+    "failedEvents" : [ ]
+  },
+  "state3" : {
+    "name" : "state3",
+    "url" : "http://www.ebay.com/sell/results?keywords=Guitars&fn=Guitars",
+    "candidateElements" : [ ],
+    "fanIn" : 1,
+    "fanOut" : 0,
+    "id" : 3,
+    "failedEvents" : [ ]
+  },
+  "state13" : {
+    "name" : "state13",
+    "url" : "http://www.ebay.com/s/phone",
+    "candidateElements" : [ ],
+    "fanIn" : 1,
+    "fanOut" : 0,
+    "id" : 13,
+    "failedEvents" : [ ]
+  },
+  "state12" : {
+    "name" : "state12",
+    "url" : "http://www.ebay.com/sl/sell",
+    "candidateElements" : [ ],
+    "fanIn" : 1,
+    "fanOut" : 0,
+    "id" : 12,
+    "failedEvents" : [ ]
+  },
+  "state11" : {
+    "name" : "state11",
+    "url" : "http://www.ebay.com/sell/results?keywords=Watches&fn=Watches",
+    "candidateElements" : [ ],
+    "fanIn" : 1,
+    "fanOut" : 0,
+    "id" : 11,
+    "failedEvents" : [ ]
+  },
+  "state10" : {
+    "name" : "state10",
+    "url" : "http://www.ebay.com/s/tablet",
+    "candidateElements" : [ ],
+    "fanIn" : 1,
+    "fanOut" : 0,
+    "id" : 10,
+    "failedEvents" : [ ]
+  },
+  "state14" : {
+    "name" : "state14",
+    "url" : "http://www.ebay.com/sl/sell",
+    "candidateElements" : [ ],
+    "fanIn" : 1,
+    "fanOut" : 0,
+    "id" : 14,
+    "failedEvents" : [ ]
+  }
+};
+		$(document).ready(
+				function() {
+					$.each(states, function() {
+						graph.addNode(this.name, {
+							img : 'screenshots/' + this.name + '_small.jpg',
+							url : "states/" + this.name + ".html"
+						});
+					});
+
+					var edgesSeen = {};
+					$.each(edges, function() {
+						var edgeKey = this.from + "-to-" + this.to;
+						if (!(edgeKey in edgesSeen)) {
+							edgesSeen[edgeKey] = true;
+							graph.addLink(this.from, this.to, {
+								text : this.text,
+								id : this.id,
+								eventType : this.eventType,
+								element : this.element
+
+							});
+						}
+					});
+
+					$("#hideButton").click(function() {
+						$(".panel-right").removeClass("in");
+						$('path[stroke="red"]').attr("stroke", "grey");
+					});
+
+					$("a[rel='popover']").popover({
+						content : $("#popup-content").html(),
+						html : true,
+						trigger : "hover"
+					});
+
+					$("a[data-toggle='tooltip']").tooltip();
+
+					var paused = false;
+					$("#pauseButton").click(
+							function() {
+								if (paused) {
+									renderer.resume();
+									paused = false;
+									$(this).children(":first").attr("class",
+											"icon-pause");
+								} else {
+									renderer.pause();
+									paused = true;
+									$(this).children(":first").attr("class",
+											"icon-play");
+								}
+							});
+
+					/* Makes nav links update the nav toolback with current page */
+					$('.nav-link').click(function(e) { 
+						/* Example: #url */
+						var target = e.target.hash;
+
+						updateNav(target);
+					});
+
+					/* page: a string with target page, like "#nav" */
+					function updateNav(page) {
+						/* Removes active class from previous active link */
+						$('.navbar li').removeClass('active');
+
+						/* Find correct link on nav-bar and add active class to it */
+						$('.navbar li').each(function(index, element) {
+							if ($(element).find('a').get(0).hash === page) {
+								$(element).addClass('active');
+
+								return false;
+							}
+						});
+					}
+
+					function loadPage(page) {
+						$('.page').hide();
+						$('#container-' + page).show();
+
+						if (page === "graph") {
+							$('.graphBtn').show();
+						} else {
+							$('.graphBtn').hide();
+						}
+					}
+
+					$(window).on(
+							'hashchange',
+							function(e) {
+								pageRef = window.location.hash.substring(1);
+								if ($("#container-" + pageRef).length == 0
+										&& pageRef !== "graph") {
+									window.location.hash = "graph";
+								} else {
+									loadPage(pageRef);
+								}
+							});
+
+					$(window).trigger('hashchange');
+				});
+
+		function showInfo(link) {
+			$(".panel-right").addClass("in");
+			$(".panel-right [name='elemName']").text(link.data.text);
+			$(".panel-right [name='from']").html(asStateLink(link.fromId));
+			$(".panel-right [name='to']").html(asStateLink(link.toId));
+			$(".panel-right [name='id']").text(link.data.id);
+			$(".panel-right [name='element']").text(link.data.element);
+			$(".panel-right [name='eventType']").text(link.data.eventType);
+		}
+
+		function asStateLink(name) {
+			return "<a href='states/" + name + ".html' target='_new'>" + name
+					+ "</a>";
+		}
+
+		$('#container-graph svg').css("width", "100%");
+		function resize() {
+			$('#container-graph').css("height", window.innerHeight - 80);
+			$('#container-graph svg').css("height", window.innerHeight - 80);
+		}
+		$(window).resize(resize);
+		resize();
+	</script>
+</body>
+</html>

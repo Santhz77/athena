@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Crawl overview</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="CrawlJax">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<link href="../css/shCore.css" rel="stylesheet" type="text/css" />
+<link href="../css/shCoreDefault.css" rel="stylesheet" type="text/css" />
+<style>
+.tooltip-inner {
+	max-width: 300px;
+	word-wrap: break-word;
+}
+
+body {
+	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+							<a class="brand" href="../index.html#graph">Crawl overview</a>
+						<ul class="nav">
+									<li class="active"><a href="#">State inspector</a></li>
+							</ul>
+			<div class="nav pull-right">
+				<a href="#" class="btn graphBtn" id='pauseButton' data-toggle="tooltip" data-placement="bottom" title="Pause the graph movement"><i class="icon-pause"></i></a>
+				<a href="#" class="btn graphBtn" rel="popover" data-placement="bottom"  data-original-title="What to do"><i class='icon-question-sign'></i></a>
+				<div style="display: none" id='popup-content'>
+					<p>You can double click a state to inspect it further.</p>
+					<p>Clicking an edge gives more details on the state transition.</p>
+					<p>Use your mouse to zoom in and out by scrolling, or drag the states and view around.</p>
+				</div>
+				<a href="result.json" class="btn" data-toggle="tooltip" data-placement="bottom" title="Download result as JSON"><i class='icon-download'></i></a>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+</nav>	<div class='container' >
+		<h1>Summary of state11</h1>
+		<table class="table table-bordered table-striped">
+			<colgroup>
+				<col class="span1">
+				<col class="span7">
+			</colgroup>
+			<tbody>
+				<tr>
+					<th>URL</th>
+					<td><a href='http://www.ebay.com/sell/results?keywords=Watches&fn=Watches'>http://www.ebay.com/sell/results?keywords=Watches&fn=Watches</a></td>
+				</tr>
+				<tr>
+					<th>Fan in</th>
+					<td>1</td>
+				</tr>
+				<tr>
+					<th>Fan out</th>
+					<td>0</td>
+				</tr>
+				<tr>
+					<th>Interaction elements</th>
+					<td>0</td>
+				</tr>
+				<tr>
+					<th>Failed events</th>
+					<td>-</td>
+			</tbody>
+		</table>
+		<ul id='tabs' class="nav nav-tabs">
+			<li class="active">
+				<a href="#screenshot">Screenshot</a>
+			</li>
+			<li>
+				<a href="#dom">Captured DOM</a>
+			</li>	
+			<li>
+				<a href="#interactions">Interactions</a>
+			</li>			
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" style="position: relative;" id='screenshot'>			
+				<img style='max-width: none;' border='0' src='../screenshots/state11.jpg' /> 
+							</div>
+			<div class="tab-pane" id='dom'>
+				<h2>Captured DOM</h2>
+				<pre class='brush: html'>&lt;!DOCTYPE html&gt;&lt;html class=&quot;locale-us&quot; lang=&quot;en&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;head id=&quot;j_id335383907_13fd8dcc&quot;&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;http://csr.ebay.com/javax.faces.resource/jsf.js.jsf?ln=javax.faces&quot;&gt;&amp;lt;!--
+
+//--&amp;gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;&amp;lt;!--
+if(window.PrimeFaces){PrimeFaces.settings.locale='en_US';}
+//--&amp;gt;&lt;/script&gt;
+		&lt;title&gt;Sell on eBay&lt;/title&gt;
+		&lt;!-- meta --&gt;
+		&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+		&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;max-age=0&quot; /&gt;
+		&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;no-cache&quot; /&gt;
+		&lt;meta http-equiv=&quot;expires&quot; content=&quot;0&quot; /&gt;
+		&lt;meta http-equiv=&quot;expires&quot; content=&quot;Tue, 01 Jan 1980 1:00:00 GMT&quot; /&gt;
+		&lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot; /&gt;
+		&lt;meta name=&quot;description&quot; content=&quot;Sell your item&quot; /&gt;
+		&lt;meta name=&quot;keywords&quot; content=&quot;Sell your item&quot; /&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width&quot; /&gt;&lt;link href=&quot;http://ir.ebaystatic.com/rs/v/e53jqwdaje51hgreoyrcwmgvq2u.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.ebay.com/sellfit/static/fitment.plugin.css?ver=18&quot; /&gt;&lt;/head&gt;&lt;body class=&quot;srp&quot;&gt;&lt;script type=&quot;text/javascript&quot;&gt; myfaces.config._autoeval = true; &lt;/script&gt;
+    		&lt;!--[if lte IE 8]&gt;
+	            &lt;form action=&quot;http://www.ebay.com/sell/browser_upgrade.jsf&quot; method=&quot;get&quot; name=&quot;old_browser_redirect&quot;&gt;&lt;/form&gt;
+	            &lt;script&gt; document.forms['old_browser_redirect'].submit() &lt;/script&gt;
+    		&lt;![endif]--&gt;
+		&lt;!-- RcmdId sell,RlogId t6%60vcpfgh%7Fw%3F%3Cwk%7Detfrcem%7Dr*sm%7E*275125%3E-15d98191775-0xf2 --&gt;&lt;form id=&quot;j_id335383907_13fd8c31&quot; name=&quot;j_id335383907_13fd8c31&quot; method=&quot;post&quot; action=&quot;/sell/results.jsf&quot; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;
+    	&lt;div&gt;&lt;a id=&quot;lnkSkipToMain&quot; href=&quot;#mainContent&quot; class=&quot;acc-skip-to-mc&quot;&gt;Skip to main content&lt;/a&gt;&lt;/div&gt;
+    &lt;div class=&quot;header-wrap&quot;&gt;
+        &lt;div class=&quot;container hidden-phone&quot;&gt;
+				&lt;div class=&quot;row&quot;&gt;
+					&lt;div class=&quot;span5&quot;&gt;
+						&lt;div class=&quot;logo&quot;&gt;
+							&lt;a id=&quot;lnkHdrLogo&quot; href=&quot;http://www.ebay.com/&quot;&gt;
+								&lt;img id=&quot;imgEbayLogo&quot; src=&quot;http://ir.ebaystatic.com/pictures/aw/pics/logos/logoEbayNew.png&quot; border=&quot;0&quot; alt=&quot;eBay logo&quot; /&gt;
+							&lt;/a&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;&lt;span class=&quot;span19&quot;&gt;&lt;div id=&quot;lyrHdrControls&quot; class=&quot;controls&quot;&gt;&lt;a href=&quot;https://www.ebay.com/slg/Switch?clientId=gandalf&amp;amp;sellingMode=AddItem&quot; id=&quot;lnkHdrSwitchForm&quot; name=&quot;lnkHdrSwitchForm&quot; class=&quot;hidden-phone&quot;&gt;Switch to advanced tool&lt;/a&gt;&lt;span id=&quot;lyrCSHelpLinks&quot;&gt;&lt;a href=&quot;http://pages.ebay.com/help/sell/quick-listing-tool.html&quot; id=&quot;lnkHdrFAQs&quot; name=&quot;lnkHdrFAQs&quot; target=&quot;_blank&quot;&gt;Help&lt;abbr class=&quot;offScr&quot;&gt;&nbsp;- opens in a new window or tab&lt;/abbr&gt;&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;
+				&lt;/div&gt;
+		&lt;/div&gt;
+        &lt;div id=&quot;mw-hdr&quot; class=&quot;visible-phone&quot;&gt;
+            &lt;div id=&quot;tbdHdr&quot;&gt;
+                &lt;div class=&quot;cl lgoCl&quot;&gt;
+                    &lt;a id=&quot;lnkHdrLogoMweb&quot; href=&quot;http://m.ebay.com/home?mfs=Header&quot;&gt;
+                    	&lt;img id=&quot;imgEbayLogoMweb&quot; src=&quot;http://ir.ebaystatic.com/pictures/aw/pics/logos/logoEbayNew.png&quot; class=&quot;headerLogo&quot; border=&quot;0&quot; alt=&quot;eBay logo&quot; /&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div aria-hidden=&quot;true&quot;&gt;&lt;a href=&quot;#&quot; onclick=&quot;jsf.util.chain(document.getElementById('lnkCheckOCSChannel'), event,'jsf.ajax.request(\'lnkCheckOCSChannel\',event,{render:\'lyrCSHelpLinks\',onevent:oG.initContactUsLink,\'javax.faces.behavior.event\':\'action\'})'); return false;&quot; id=&quot;lnkCheckOCSChannel&quot; name=&quot;lnkCheckOCSChannel&quot; tabindex=&quot;-1&quot;&gt;&lt;/a&gt;
+		&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+  		//&amp;lt;![CDATA[
+    	var GH_config = {
+    	    pageId : 2051574 
+    	}
+    	//]]&amp;gt;
+    &lt;/script&gt;&lt;input type=&quot;hidden&quot; name=&quot;j_id335383907_13fd8c31_SUBMIT&quot; value=&quot;1&quot; /&gt;&lt;input type=&quot;hidden&quot; name=&quot;javax.faces.ViewState&quot; id=&quot;javax.faces.ViewState&quot; value=&quot;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&quot; /&gt;&lt;/form&gt;
+        
+        &lt;div id=&quot;mainContent&quot; class=&quot;row&quot; role=&quot;main&quot; tabindex=&quot;-1&quot;&gt;
+			&lt;div class=&quot;container&quot;&gt;
+				&lt;div class=&quot;span24&quot;&gt;
+        			&lt;form id=&quot;sell&quot; class=&quot;srp_form&quot; name=&quot;sell&quot; enctype=&quot;application/x-www-form-urlencoded&quot; action=&quot;http://www.ebay.com/sell/results.jsf?sbh=true&quot;&gt;
+						&lt;div class=&quot;row keyword-row&quot;&gt;
+							&lt;div class=&quot;span24 keywordPrompt&quot;&gt;
+                                &lt;label for=&quot;keywords&quot;&gt;
+                                &lt;span class=&quot;offScr&quot;&gt;You are on search results page. Find this item's category or similar products below.&lt;/span&gt;&lt;span class=&quot;hidden-phone&quot;&gt;Give us a title for your listing (include brand, size, color, material, etc.)&lt;/span&gt;&lt;span class=&quot;visible-phone&quot;&gt;Tell us what you're selling&lt;/span&gt;
+                                &lt;/label&gt;
+        					&lt;/div&gt;
+                        &lt;/div&gt;
+						&lt;div class=&quot;row keyword-input-row&quot;&gt;
+							&lt;div class=&quot;span19&quot;&gt;&lt;input id=&quot;keywords&quot; name=&quot;keywords&quot; type=&quot;text&quot; value=&quot;Watches&quot; maxlength=&quot;80&quot; class=&quot;srp input-block-level loading&quot; autocomplete=&quot;off&quot; /&gt;
+								&lt;div class=&quot;keyword-help&quot;&gt;E.g.: Men's blue adidas Glide running shoes size 11&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class=&quot;span5&quot;&gt;&lt;input id=&quot;btnStart1&quot; class=&quot;btn btn-ter btn-large input-block-level&quot; type=&quot;button&quot; value=&quot;Find this&quot; /&gt;&lt;/div&gt;
+						&lt;/div&gt;
+						&lt;h1 class=&quot;inheritfontSize&quot;&gt;&lt;b&gt;Find this item's category or similar products below.&lt;/b&gt;&lt;/h1&gt;
+						&lt;div class=&quot;row categories-templates&quot;&gt;
+							&lt;div class=&quot;span24 categories-templates-wrap&quot;&gt;
+								&lt;div class=&quot;well&quot;&gt;
+									&lt;div id=&quot;category-picker&quot; class=&quot;cur hdn&quot;&gt;
+										&lt;div role=&quot;status&quot; aria-live=&quot;polite&quot; class=&quot;offScr&quot; id=&quot;category_section&quot;&gt;&lt;/div&gt;
+										&lt;div id=&quot;category-path&quot; class=&quot;caty-levels-there&quot;&gt;
+            								&lt;div class=&quot;category-path-titles&quot;&gt;
+            									&lt;span id=&quot;categoryBreadCrumb&quot; class=&quot;catResTitle&quot;&gt;&lt;h2 class=&quot;inheritfontSize&quot;&gt;&lt;b&gt;The products shown are from this category:&lt;/b&gt;&lt;/h2&gt;&lt;/span&gt;
+            									&lt;span id=&quot;categoryMatching&quot; class=&quot;catResTitleChoose&quot;&gt;&lt;h2 class=&quot;inheritfontSize&quot;&gt;&lt;b&gt;Select a matching category for your item:&lt;/b&gt;&lt;/h2&gt;&lt;/span&gt;
+            								&lt;/div&gt;
+                                            &lt;div class=&quot;category-path-selected&quot;&gt;&lt;/div&gt;
+                                            &lt;div class=&quot;category-nav&quot;&gt;
+                                                &lt;a href=&quot;javascript:;&quot; class=&quot;category-back&quot;&gt;&lt;i&gt;&lt;/i&gt; Back&lt;/a&gt;
+                                                &lt;span class=&quot;category-suggested-text&quot;&gt;Suggested&lt;/span&gt;
+                                                &lt;a class=&quot;category-cancel btn btn-secondary btn-small&quot; href=&quot;javascript:;&quot;&gt;Cancel&lt;/a&gt;
+                                            &lt;/div&gt;
+                                            &lt;span class=&quot;offScr&quot; tabindex=&quot;-1&quot; id=&quot;nav_start&quot;&gt;start navigation&lt;/span&gt;
+											&lt;div class=&quot;catRes catyLevel row-fluid&quot; id=&quot;catres&quot;&gt;												
+												&lt;div class=&quot;breadCrum&quot; id=&quot;bread_Crum&quot;&gt;&lt;/div&gt;
+												&lt;div class=&quot;listBox&quot; id=&quot;list_box&quot;&gt;&lt;/div&gt;
+												&lt;div class=&quot;radioBtn&quot; id=&quot;radio_Btn&quot;&gt;&lt;/div&gt;
+											&lt;/div&gt;
+											&lt;span class=&quot;offScr&quot; tabindex=&quot;-1&quot; id=&quot;nav_end&quot;&gt;end navigation&lt;/span&gt;
+            							&lt;/div&gt;
+            						&lt;/div&gt;
+            						&lt;div id=&quot;listingsTitle&quot; class=&quot;hdn&quot;&gt;
+            							&lt;b class=&quot;listingsLink&quot;&gt;
+            								&lt;a href=&quot;javascript:;&quot; id=&quot;slist&quot; class=&quot;sList&quot; role=&quot;button&quot; aria-controls=&quot;template-picker&quot; aria-expanded=&quot;false&quot;&gt;Create listing from a similar item&lt;/a&gt;
+            							&lt;/b&gt;
+            						&lt;/div&gt;
+            						&lt;div id=&quot;results-wrap&quot; aria-live=&quot;polite&quot; aria-busy=&quot;false&quot;&gt;
+            							&lt;div id=&quot;lyrResultsStatus&quot; class=&quot;offScr&quot;&gt;&lt;/div&gt;
+	            						&lt;div id=&quot;template-picker&quot; class=&quot;cur hdn&quot;&gt;
+	            							&lt;div id=&quot;catResBtnWrap&quot; class=&quot;hdn&quot;&gt;
+	            								&lt;h2&gt;&lt;b id=&quot;catResTitle&quot;&gt;Create listing from a similar item&lt;/b&gt;&lt;/h2&gt;
+	            							&lt;/div&gt;
+	            							&lt;div id=&quot;name-values&quot; class=&quot;hdn&quot;&gt;
+	            								&lt;span class=&quot;name-values-info&quot;&gt;&lt;a class=&quot;showHrgs&quot; href=&quot;javascript:;&quot;&gt;&lt;i&gt;Enter details to find a good match&lt;/i&gt; &lt;span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;
+	            								&lt;div class=&quot;hist catSpec&quot; id=&quot;catSpec&quot;&gt;&lt;/div&gt;
+	            							&lt;/div&gt;
+	            							&lt;div id=&quot;ph&quot; class=&quot;prod-hist&quot;&gt;
+	            								&lt;div class=&quot;hdn spinner&quot;&gt;&lt;/div&gt;
+	            								&lt;div id=&quot;scroll-shadow&quot;&gt;&lt;/div&gt;
+	            								&lt;div class=&quot;ov&quot;&gt;&lt;div class=&quot;prods&quot; id=&quot;prodsList&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+	            								&lt;div class=&quot;res-load-more&quot;&gt;&lt;a id=&quot;res-load-more&quot; href=&quot;javascript:void(0);&quot;&gt;Show more&lt;/a&gt;&lt;/div&gt;
+	            							&lt;/div&gt;
+	            							&lt;div id=&quot;res-scroll-top&quot; class=&quot;hdn&quot; aria-hidden=&quot;true&quot;&gt;&lt;a href=&quot;javascript:void(0);&quot; onclick=&quot;$('html, body').animate({ scrollTop : 0 });&quot;&gt;Scroll to top&lt;/a&gt;&lt;/div&gt;
+	            							&lt;div id=&quot;results-footer&quot; class=&quot;results-footer&quot;&gt;
+	            								&lt;h3&gt;None of these match yours?&lt;/h3&gt;
+	            							&lt;/div&gt;
+	            						&lt;/div&gt;
+	            					&lt;/div&gt;
+								&lt;/div&gt;
+        					&lt;/div&gt;
+        				&lt;/div&gt;
+					
+        				&lt;div id=&quot;sbContent&quot; style=&quot;display:none&quot; align=&quot;left&quot;&gt;
+        					&lt;div id=&quot;sbResults&quot;&gt;&lt;/div&gt;
+        				&lt;/div&gt;
+        				
+        				&lt;div align=&quot;center&quot; class=&quot;hdn&quot; id=&quot;spinnerwait&quot; style=&quot;position:absolute;z-index:1001; padding:25px; background:#fff;border-radius:5px;&quot;&gt;&lt;img src=&quot;http://p.ebaystatic.com/aw/cmp/img/imgThrobber_45x45.gif&quot; /&gt;&lt;/div&gt;&lt;input type=&quot;hidden&quot; id=&quot;ts&quot; name=&quot;ts&quot; value=&quot;&quot; /&gt;&lt;input type=&quot;hidden&quot; id=&quot;catyId&quot; name=&quot;catyId&quot; value=&quot;&quot; /&gt;&lt;input type=&quot;hidden&quot; id=&quot;catyName&quot; name=&quot;catyName&quot; value=&quot;&quot; /&gt;&lt;input type=&quot;hidden&quot; id=&quot;startPage&quot; name=&quot;startPage&quot; value=&quot;false&quot; /&gt;&lt;input type=&quot;hidden&quot; id=&quot;fromSellNode&quot; name=&quot;fromSellNode&quot; value=&quot;false&quot; /&gt;&lt;input type=&quot;hidden&quot; id=&quot;usecase&quot; name=&quot;usecase&quot; value=&quot;&quot; /&gt;&lt;input type=&quot;hidden&quot; id=&quot;draftId&quot; name=&quot;draftId&quot; value=&quot;&quot; /&gt;&lt;input type=&quot;hidden&quot; id=&quot;oriProdId&quot; name=&quot;oriProdId&quot; value=&quot;&quot; /&gt;&lt;input type=&quot;hidden&quot; id=&quot;oriCatId&quot; name=&quot;oriCatId&quot; value=&quot;&quot; /&gt;&lt;input type=&quot;hidden&quot; id=&quot;oriMode&quot; name=&quot;oriMode&quot; value=&quot;&quot; /&gt;&lt;input type=&quot;hidden&quot; id=&quot;cIpath&quot; name=&quot;cIpath&quot; value=&quot;&quot; /&gt;&lt;input type=&quot;hidden&quot; id=&quot;cNpath&quot; name=&quot;cNpath&quot; value=&quot;&quot; /&gt;&lt;input type=&quot;hidden&quot; id=&quot;campaign&quot; name=&quot;campaign&quot; value=&quot;&quot; /&gt;&lt;input type=&quot;hidden&quot; id=&quot;isVQ&quot; name=&quot;isVQ&quot; value=&quot;&quot; /&gt;
+			
+        				&lt;input type=&quot;hidden&quot; id=&quot;keyWordVal&quot; value=&quot;Watches&quot; /&gt;&lt;textarea id=&quot;catJSON&quot; name=&quot;catJSON&quot; class=&quot;hdn&quot;&gt;{&quot;isSkipCategory&quot;:&quot;false&quot;,&quot;isProds&quot;:2,&quot;siteId&quot;:&quot;0&quot;,&quot;ctree&quot;:{&quot;child&quot;:[{&quot;child&quot;:[{&quot;child&quot;:[{&quot;child&quot;:[],&quot;id&quot;:&quot;31387&quot;,&quot;name&quot;:&quot;Wristwatches&quot;},{&quot;child&quot;:[],&quot;id&quot;:&quot;173695&quot;,&quot;name&quot;:&quot;Boxes, Cases &amp;amp; Watch Winders&quot;},{&quot;child&quot;:[{&quot;child&quot;:[],&quot;id&quot;:&quot;117039&quot;,&quot;name&quot;:&quot;Tools &amp;amp; Repair Kits&quot;},{&quot;child&quot;:[],&quot;id&quot;:&quot;165144&quot;,&quot;name&quot;:&quot;Watches for Parts&quot;},{&quot;child&quot;:[{&quot;child&quot;:[],&quot;id&quot;:&quot;57720&quot;,&quot;name&quot;:&quot;Movements&quot;}],&quot;id&quot;:&quot;63200&quot;,&quot;name&quot;:&quot;Parts&quot;}],&quot;id&quot;:&quot;173696&quot;,&quot;name&quot;:&quot;Parts, Tools &amp;amp; Guides&quot;},{&quot;child&quot;:[{&quot;child&quot;:[],&quot;id&quot;:&quot;3940&quot;,&quot;name&quot;:&quot;Antique&quot;}],&quot;id&quot;:&quot;3937&quot;,&quot;name&quot;:&quot;Pocket Watches&quot;}],&quot;id&quot;:&quot;14324&quot;,&quot;name&quot;:&quot;Watches, Parts &amp;amp; Accessories&quot;},{&quot;child&quot;:[{&quot;child&quot;:[{&quot;child&quot;:[{&quot;child&quot;:[],&quot;id&quot;:&quot;64518&quot;,&quot;name&quot;:&quot;Men's&quot;},{&quot;child&quot;:[],&quot;id&quot;:&quot;64520&quot;,&quot;name&quot;:&quot;Mixed Lots&quot;}],&quot;id&quot;:&quot;64517&quot;,&quot;name&quot;:&quot;Wristwatches&quot;}],&quot;id&quot;:&quot;51020&quot;,&quot;name&quot;:&quot;Watches&quot;}],&quot;id&quot;:&quot;40131&quot;,&quot;name&quot;:&quot;Wholesale Lots&quot;}],&quot;id&quot;:&quot;281&quot;,&quot;name&quot;:&quot;Jewelry &amp;amp; Watches&quot;},{&quot;child&quot;:[{&quot;child&quot;:[{&quot;child&quot;:[],&quot;id&quot;:&quot;165254&quot;,&quot;name&quot;:&quot;Jewelry &amp;amp; Watches&quot;}],&quot;id&quot;:&quot;34&quot;,&quot;name&quot;:&quot;Advertising&quot;},{&quot;child&quot;:[{&quot;child&quot;:[{&quot;child&quot;:[],&quot;id&quot;:&quot;1384&quot;,&quot;name&quot;:&quot;Watches, Timepieces&quot;}],&quot;id&quot;:&quot;1369&quot;,&quot;name&quot;:&quot;Contemporary (1968-Now)&quot;}],&quot;id&quot;:&quot;137&quot;,&quot;name&quot;:&quot;Disneyana&quot;}],&quot;id&quot;:&quot;1&quot;,&quot;name&quot;:&quot;Collectibles&quot;}],&quot;id&quot;:&quot;root_id&quot;},&quot;dcidRank&quot;:86,&quot;dcid&quot;:[&quot;281&quot;,&quot;14324&quot;,&quot;31387&quot;],&quot;leafCategoryId&quot;:&quot;31387&quot;}&lt;/textarea&gt; 
+        				&lt;input type=&quot;hidden&quot; id=&quot;pageName&quot; value=&quot;results&quot; name=&quot;pageName&quot; /&gt;
+        			&lt;/form&gt;
+                &lt;/div&gt;
+    		&lt;/div&gt;
+    	&lt;/div&gt;&lt;a href=&quot;https://connect.ebay.com/srv/survey/a/selling.c2c.gandalf?title=0&amp;amp;ctx=draftId%3D%26userName%3D&quot; id=&quot;lnkFdbk&quot; name=&quot;lnkFdbk&quot; target=&quot;_blank&quot; class=&quot;fdbk visible-desktop&quot;&gt;
+		&lt;abbr&gt;Please let us know your thoughts.  - opens in a new window or tab&lt;/abbr&gt;&lt;/a&gt;
+	&lt;div id=&quot;lyrPageFooter&quot; class=&quot;footer&quot;&gt;&lt;!--[if lt IE 9]&gt;&lt;div id=&quot;glbfooter&quot; role=&quot;contentinfo&quot; class=&quot;gh-w gh-flex&quot;&gt;&lt;![endif]--&gt;&lt;!--[if (gte IE 9)|!(IE)]&gt;&lt;!--&gt;&lt;footer id=&quot;glbfooter&quot; role=&quot;contentinfo&quot; class=&quot;gh-w gh-flex&quot;&gt;&lt;!--&lt;![endif]--&gt;&lt;div&gt;&lt;div id=&quot;rtm_html_1650&quot;&gt;&lt;/div&gt;&lt;div id=&quot;rtm_html_1651&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;h2 class=&quot;gh-ar-hdn&quot;&gt;Additional site navigation&lt;/h2&gt;&lt;div id=&quot;gf-t-box&quot;&gt;&lt;table class=&quot;gf-t&quot;&gt;&lt;tbody&gt;&lt;tr valign=&quot;top&quot;&gt;&lt;td class=&quot;gf-legal&quot;&gt;Copyright &copy; 1995-2017 eBay Inc. All Rights Reserved. &lt;a href=&quot;http://pages.ebay.com/help/policies/user-agreement.html&quot;&gt;User Agreement&lt;/a&gt;, &lt;a href=&quot;http://pages.ebay.com/help/policies/privacy-policy.html&quot;&gt;Privacy&lt;/a&gt;, &lt;a href=&quot;http://pages.ebay.com/help/account/cookies-web-beacons.html&quot;&gt;Cookies&lt;/a&gt; and &lt;a href=&quot;http://cgi6.ebay.com/ws/eBayISAPI.dll?AdChoiceLandingPage&amp;amp;partner=0&quot; id=&quot;gf-AdChoice&quot;&gt;AdChoice&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;!--[if lt IE 9]&gt;&lt;/div&gt;&lt;![endif]--&gt;&lt;!--[if (gte IE 9)|!(IE)]&gt;&lt;!--&gt;&lt;/footer&gt;&lt;!--&lt;![endif]--&gt;&lt;!--ts:2017.07.30.16:00--&gt;&lt;!--rq:--&gt;&lt;!--rvr:109e--&gt;
+
+	&lt;/div&gt;
+	&lt;span id=&quot;lyrAriaStatusMessage&quot; role=&quot;status&quot; aria-live=&quot;assertive&quot; class=&quot;offScr&quot;&gt;&lt;/span&gt;
+		&lt;div class=&quot;ui-widget-overlay hdn opacityLyr&quot;&gt;&lt;/div&gt;
+		
+		&lt;div id=&quot;lyrSwitchForm&quot; class=&quot;hdn&quot;&gt;&lt;/div&gt;
+		&lt;div id=&quot;switchFormContent&quot; class=&quot;hdn&quot;&gt;
+			&lt;div class=&quot;well well-message inline&quot;&gt;
+				&lt;div class=&quot;mgnBtm&quot;&gt;&lt;b&gt;We recommend that you don't switch listing tools.&lt;/b&gt;&lt;/div&gt;
+				&lt;div class=&quot;mgnBtm&quot;&gt;The advanced tool is best for high-volume sellers.&lt;/div&gt;If you're a new seller or don't list many items, we recommend that you stay here.
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+&lt;script type=&quot;text/template&quot; id=&quot;breadCrumTemplate&quot;&gt;
+//&amp;lt;![CDATA[
+&amp;lt;span class=&quot;catResPath remove&quot; id= &quot;&amp;lt;%= catPath %&amp;gt;&quot;&amp;gt;
+&amp;lt;% _.each(breadcrumdata, function(item, key, list) { %&amp;gt;
+				&amp;lt;span class=&quot;pdgRgtSm remove&quot;&amp;gt;
+					&amp;lt;%= item %&amp;gt;
+					&amp;lt;% if(key !== list.length-1 ){%&amp;gt;
+					&amp;lt;span class=&quot;has-child&quot; aria-hidden=&quot;true&quot; tabindex=&quot;&quot;&amp;gt; &amp;amp;#62;&amp;lt;/span&amp;gt;
+				&amp;lt;% } %&amp;gt;
+				&amp;lt;/span&amp;gt;
+&amp;lt;% }); %&amp;gt;
+&amp;lt;span&amp;gt;&amp;lt;span aria-hidden=&quot;true&quot;&amp;gt;[&amp;lt;/span&amp;gt;&amp;lt;a class=&quot;ShowDefaultView&quot; id=&quot;ShowDefaultView&quot; role=&quot;button&quot; href=&quot;javascript:void(0);&quot;&amp;gt;&amp;lt;%= oStartCfg.content.sChange %&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;span aria-hidden=&quot;true&quot;&amp;gt;]&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;
+&amp;lt;/span&amp;gt;
+//]]&amp;gt;
+&lt;/script&gt;
+&lt;!-- template for radio button,key is index,item is object,list array of objects --&gt;
+&lt;script type=&quot;text/template&quot; id=&quot;radioBtnTemplate&quot;&gt;
+//&amp;lt;![CDATA[  
+&amp;lt;% _.each(data, function(item, key, list) { %&amp;gt; 
+&amp;lt;% var temp = 0; %&amp;gt;
+		 	&amp;lt;div class=&quot;catyNew remove&quot; id=&quot;&amp;lt;%= item.ids.join('|') %&amp;gt;&quot;&amp;gt;
+				&amp;lt;input type=&quot;radio&quot; class=&quot;rad&quot; id=&quot;&amp;lt;%= item.ids[item.ids.length-1] %&amp;gt;&quot; name=&quot;g1&quot; rank=&quot;&amp;lt;%= item.rank %&amp;gt;&quot;/&amp;gt;
+					&amp;lt;label for=&quot;&amp;lt;%= item.ids[item.ids.length-1] %&amp;gt;&quot;&amp;gt;
+						&amp;lt;% for(var i=0; i&amp;lt; item.names.length;i++) { %&amp;gt;
+							&amp;lt;b class=&quot;pdgRgtSm&quot;&amp;gt;&amp;lt;%= item.names[i] %&amp;gt;&amp;lt;/b&amp;gt;
+							&amp;lt;% if(i &amp;lt; item.names.length-1){ %&amp;gt;
+								&amp;lt;span aria-hidden=&quot;true&quot;&amp;gt;&amp;gt;&amp;lt;/span&amp;gt;
+							&amp;lt;%}%&amp;gt;
+						&amp;lt;% } %&amp;gt;
+					&amp;lt;/label&amp;gt;
+			&amp;lt;/div&amp;gt;
+&amp;lt;% });%&amp;gt;
+&amp;lt;div class=&quot;catyNew&quot;&amp;gt;&amp;lt;a href=&quot;javascript:;&quot; role=&quot;button&quot; class=&quot;saCaty&quot;&amp;gt;&amp;lt;%=  oStartCfg.content.sAnotherCaty %&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
+//]]&amp;gt;
+&lt;/script&gt;
+&lt;!-- template for list box,key is index,item is object,list array of objects,here listbox data is Osrc.ctree.child or appropriate object on clicking of the listbox item --&gt;
+&lt;script type=&quot;text/template&quot; id=&quot;listBoxTemplate&quot;&gt;
+//&amp;lt;![CDATA[   
+&amp;lt;% _.each(ctreeData, function(item, key, list) { %&amp;gt; 
+&amp;lt;% var data = item, index = i %&amp;gt;
+	&amp;lt;% if(item !== '' &amp;amp;&amp;amp; item !== null &amp;amp;&amp;amp; typeof item != undefined) { %&amp;gt;
+			&amp;lt;div role=&quot;treeitem&quot; 
+				aria-checked=&quot;&amp;lt;%= (item.child.length || item.child === [] ? '' : 'false') %&amp;gt;&quot; 
+				aria-label=&quot;&amp;lt;%= oStartCfg.accessibleCnt.treeLevel.replace('##1##',parseInt(i+1)) + item.name+' &amp;amp;nbsp; '+( item.child.length ? selectorVar.sc.accessibleCnt.arrowKeys : selectorVar.sc.accessibleCnt.leafCats) %&amp;gt;&quot;
+				tabindex=&quot;-1&quot; 
+				aria-owns=&quot;&amp;lt;%= (item.child.length || item.child === [] ? 'level'+parseInt(key+1) : '') %&amp;gt;&quot; 
+				id=&quot;&amp;lt;%= &quot;list-level&quot;+parseInt(key+1) %&amp;gt;&quot;
+				idx=&quot;&amp;lt;%= i %&amp;gt;&quot;
+				class=&quot;&amp;lt;%= (key == 0 ? 'mo' : '')+' '+(item.child.length !== 0 ? 'mlev' : (item.child.length &amp;gt; 0 ? 'nlev' : 'lf')) %&amp;gt;&quot;
+				uniqueId = &quot;&amp;lt;%= item.id %&amp;gt;&quot; 
+				data-text = &quot;&amp;lt;%= item.name %&amp;gt;&quot;
+				&amp;gt;&amp;lt;%= item.name %&amp;gt;
+			&amp;lt;% if(item.child.length &amp;gt; 0 ) {%&amp;gt;
+					&amp;amp;#62;
+			&amp;lt;% } %&amp;gt;
+			&amp;lt;/div&amp;gt;
+	&amp;lt;% } %&amp;gt;
+&amp;lt;% });%&amp;gt;
+//]]&amp;gt;
+&lt;/script&gt;
+&lt;!-- template for outer list box--&gt;
+&lt;script type=&quot;text/template&quot; id=&quot;outerlistBoxTemplate&quot;&gt;
+//&amp;lt;![CDATA[  
+&amp;lt;% var index= i, listelementClickedflag =  smartnew.listelementClicked %&amp;gt;
+&amp;lt;% if(dcid.length === 0){ dcid.length = 1 } %&amp;gt;
+	&amp;lt;div tabindex=&quot;&quot; 
+		role=&quot;&amp;lt;%= (index ==0 ? &quot;&quot; : &quot;group&quot;) %&amp;gt;&quot; 
+	 	class= &quot;&amp;lt;%= &quot;levels&quot;+&quot; &quot;+&quot;metaLevel&quot;+&quot; &quot;+(index == dcid.length-1 ? &quot;caty-last-level&quot; : (index == 0 ? &quot;caty-first-level&quot; : &quot;&quot;)) %&amp;gt;&quot; 
+	 	id=&quot;&amp;lt;%= &quot;level&quot;+parseInt(index+1) %&amp;gt;&quot;
+		level = &quot;&amp;lt;%=parseInt(index+1)%&amp;gt;&quot;
+		index=&quot;0&quot; 
+		idx=&quot;&amp;lt;%=(listelementClickedflag === true ? uniqueid : (index == 0 ? dcid[dcid.length-(index+1)] : dcid[(index-1)])) %&amp;gt;&quot;&amp;gt;
+		&amp;lt;div class=&quot;listItems&quot;&amp;gt;&amp;lt;/div&amp;gt;
+		&amp;lt;div role=&quot;treeitem&quot; 
+				 aria-label=&quot;&amp;lt;%= selectorVar.sc.content.sSeeAll+' &amp;amp;nbsp; '+(index == 0 ? selectorVar.sc.accessibleCnt.moreCats : selectorVar.sc.accessibleCnt.moreSubCats) %&amp;gt;&quot; 
+				 aria-expanded=&quot;false&quot;
+				 tabindex=&quot;&quot; 
+				 aria-controls=&quot;&amp;lt;%= &quot;level&quot;+index %&amp;gt;&quot;
+				 id=&quot;&amp;lt;%= &quot;level&quot;+parseInt(index)+'_all' %&amp;gt;&quot; 
+				 class=&quot;&amp;lt;%= (index==0 ? 'sm1':'sm') %&amp;gt;&quot;&amp;gt;&amp;lt;%= selectorVar.sc.content.sSeeAll %&amp;gt;
+			&amp;lt;/div&amp;gt;
+	&amp;lt;/div&amp;gt;
+&amp;lt;% if($('.levels').length &amp;gt; 0) { %&amp;gt;
+		&amp;lt;% if($('#level'+(index)+'').find('.arr').length === 0 ) {%&amp;gt;
+		 	&amp;lt;%	$('#level'+(index)+'').after('&amp;lt;img src=&quot;http://pics.ebaystatic.com/aw/pics/sell/C2C/imgCatArrow.png&quot; class=&quot;arr&quot; alt=&quot;including&quot; style=&quot;display: inline;&quot;&amp;gt;'); %&amp;gt;	
+		&amp;lt;% } %&amp;gt;
+&amp;lt;% } %&amp;gt;
+//]]&amp;gt;
+&lt;/script&gt;
+&lt;!-- fitment  --&gt;
+&lt;script type=&quot;text/template&quot; id=&quot;fitmentTemplate&quot;&gt;
+//&amp;lt;![CDATA[
+&amp;lt;% var metaFits = {&quot;view&quot;: &quot;view-fitments&quot;, &quot;product&quot;: product, &quot;category&quot;: smartnew.categoryId, &quot;page&quot; : &quot;search&quot;} %&amp;gt;
+&amp;lt;% var fitsCntContent = '', fitsCntMobContent = '' %&amp;gt;
+&amp;lt;% var fitsMeta = &quot; productID = '&quot;+product+&quot;' data-frame-meta='&quot; + JSON.stringify(metaFits) + &quot;' &quot;%&amp;gt;
+&amp;lt;% if( fcnt &amp;gt; 1) { %&amp;gt;
+	&amp;lt;% fitsCntContent = oStartCfg.content.compatibilityMultiple %&amp;gt;
+	&amp;lt;% fitsCntContent = fitsCntContent.replace(&quot;##1##&quot;, fcnt) %&amp;gt;
+ &amp;lt;% } else { %&amp;gt;
+	&amp;lt;% 	fitsCntContent = oStartCfg.content.compatibilitySingle %&amp;gt;
+&amp;lt;% } %&amp;gt;
+&amp;lt;% fitsCntContent = fitsCntContent.replace(/&amp;lt;a/g, '&amp;lt;a '+fitsMeta) %&amp;gt;
+
+&amp;lt;div class=&quot;cust-visible-desktop normal-txt&quot;&amp;gt;&amp;lt;%= fitsCntContent %&amp;gt;&amp;lt;/div&amp;gt;
+//]]&amp;gt;
+&lt;/script&gt;
+&lt;!--template for products//TODO:1) add links to &quot;sell one like this&quot; and the image --&gt;
+&lt;script type=&quot;text/template&quot; id=&quot;productsListTemplate&quot;&gt;
+//&amp;lt;![CDATA[  
+&amp;lt;% var motorsParam = smartnew.motorsParamText,fitsCntContent = oStartCfg.content.cmpCount%&amp;gt;
+&amp;lt;div id=&quot;sbu&quot; class=&quot;sR&quot;&amp;gt;
+&amp;lt;% _.each(data, function(item, key, list) { %&amp;gt; 
+&amp;lt;% if(key % 2 == 0) { %&amp;gt;
+	&amp;lt;div class=&quot;row-fluid&quot;&amp;gt;
+&amp;lt;% } %&amp;gt;
+		&amp;lt;% { var sTile = (item.tile)? encodeURIComponent(item.tile) : '' }%&amp;gt;
+		&amp;lt;div productID = &amp;lt;%= item.pid %&amp;gt;  id= &amp;lt;%= &quot;li_&quot;+item.pid %&amp;gt; class=&quot;li span12&quot; index= &amp;lt;%= key+1 %&amp;gt; &amp;gt;
+  				&amp;lt;a id=&quot;&amp;lt;%=&quot;a_&quot;+item.pid+&quot;_link&quot; %&amp;gt;&quot; productID=&quot;&amp;lt;%= item.pid %&amp;gt;&quot; href=&quot;javascript:;&quot; class=&quot;imgLink&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&amp;gt;
+					&amp;lt;b class=&quot;im&quot;&amp;gt;&amp;lt;i&amp;gt;&amp;lt;/i&amp;gt;
+						&amp;lt;img src=&quot;&amp;lt;%= (item.sph &amp;amp;&amp;amp; item.sph.length &amp;amp;&amp;amp; item.sph !== &quot;&quot; ? item.sph.replace('_6', '_26') : smartnew.noImg) %&amp;gt;&quot; border=&quot;0&quot; alt=&quot;&amp;lt;%=  oStartCfg.content.stockImg %&amp;gt;&quot;&amp;gt;
+					&amp;lt;/b&amp;gt;
+				&amp;lt;/a&amp;gt;
+				&amp;lt;b class=&quot;lnk&quot;&amp;gt;
+					&amp;lt;span class=&quot;ptitle&quot;&amp;gt;
+						&amp;lt;% if(smartnew.showDetails) { %&amp;gt;
+							&amp;lt;% var metaData = {view: &quot;part-details&quot;, product: item.pid, category: smartnew.categoryId, page : &quot;search&quot;} %&amp;gt;
+							&amp;lt;h3 class=&quot;inheritfontSize product_title_show_details&quot;&amp;gt;&amp;lt;%= item.tile %&amp;gt;&amp;lt;/h3&amp;gt;&amp;lt;a class=&quot;cust-visible-desktop show_details&quot; data-frame-meta='&amp;lt;%= JSON.stringify(metaData) %&amp;gt;' href=&quot;javascript:;&quot;&amp;gt;&amp;lt;%=  oStartCfg.content.showDetails %&amp;gt;&amp;lt;/a&amp;gt;
+						&amp;lt;% } else { %&amp;gt;
+							&amp;lt;h3 class=&quot;inheritfontSize&quot;&amp;gt;&amp;lt;%= item.tile %&amp;gt;&amp;lt;/h3&amp;gt;
+						&amp;lt;% } %&amp;gt;
+					&amp;lt;/span&amp;gt;
+					&amp;lt;% if(motorsParam !== 1) { %&amp;gt;
+						&amp;lt;div class=&quot;si&quot;&amp;gt;&amp;lt;/div&amp;gt;
+						&amp;lt;a id= &amp;lt;%= &quot;a_&quot;+item.pid%&amp;gt; productID = &amp;lt;%= item.pid %&amp;gt; index= &amp;lt;%= key+1 %&amp;gt; class=&quot;SellLikeLink&quot; sTitle = &amp;lt;%= sTile %&amp;gt;  href=&quot;javascript:;&quot;&amp;gt;&amp;lt;%=  oStartCfg.content.sUseTmpl %&amp;gt;
+							&amp;lt;span class=&quot;offScr&quot;&amp;gt;&amp;lt;%= item.tile %&amp;gt;&amp;lt;/span&amp;gt;
+						&amp;lt;/a&amp;gt;
+					&amp;lt;% } else { %&amp;gt;
+							&amp;lt;% if(item.fcnt != undefined &amp;amp;&amp;amp; item.fcnt != 0) { %&amp;gt;
+								&amp;lt;% if(smartnew.fitPreview) { %&amp;gt;
+									&amp;lt;%= _.template(Templates.fitmentTemplate)({fcnt:item.fcnt, product:item.pid}) %&amp;gt;
+									&amp;lt;div class=&quot;normal-txt cust-hidden-desktop&quot;&amp;gt;&amp;lt;%= fitsCntContent.replace(&quot;{1}&quot;, &quot;&amp;lt;b&amp;gt;&quot; + item.fcnt + &quot;&amp;lt;/b&amp;gt;&quot;) %&amp;gt;&amp;lt;/div&amp;gt;
+								&amp;lt;% } else { %&amp;gt;
+									&amp;lt;div class=&quot;normal-txt&quot;&amp;gt;&amp;lt;%= fitsCntContent.replace(&quot;{1}&quot;, &quot;&amp;lt;b&amp;gt;&quot; + item.fcnt + &quot;&amp;lt;/b&amp;gt;&quot;) %&amp;gt;&amp;lt;/div&amp;gt;
+								&amp;lt;% } %&amp;gt;
+							&amp;lt;% } %&amp;gt;
+						&amp;lt;div class=&quot;si&quot;&amp;gt;&amp;lt;/div&amp;gt;
+						&amp;lt;a id= &amp;lt;%= &quot;a_&quot;+item.pid%&amp;gt; productID = &amp;lt;%= item.pid %&amp;gt; index= &amp;lt;%= key+1 %&amp;gt; class=&quot;SellLikeLink&quot; sTitle = &amp;lt;%= sTile %&amp;gt; href=&quot;javascript:;&quot;&amp;gt;&amp;lt;%=  oStartCfg.content.sSellYours %&amp;gt;
+							&amp;lt;span class=&quot;offScr&quot;&amp;gt;&amp;lt;%= item.tile %&amp;gt;&amp;lt;/span&amp;gt;
+						&amp;lt;/a&amp;gt;
+					&amp;lt;% } %&amp;gt;
+				&amp;lt;/b&amp;gt;
+				&amp;lt;span class=&quot;hover&quot; tabindex=&quot;&quot;&amp;gt;
+					&amp;lt;span&amp;gt;&amp;lt;b class=&quot;cls&quot; tabindex=&quot;&quot;&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;i&amp;gt;&amp;lt;/i&amp;gt;
+						&amp;lt;img src=&amp;lt;%= item.sph %&amp;gt;&amp;gt;
+					&amp;lt;/span&amp;gt;
+				&amp;lt;/span&amp;gt;
+		&amp;lt;/div&amp;gt;	
+&amp;lt;% if(key % 2 &amp;gt; 0) { %&amp;gt;
+	&amp;lt;/div&amp;gt;
+&amp;lt;% } %&amp;gt;
+&amp;lt;% }) %&amp;gt;
+&amp;lt;/div&amp;gt;
+//]]&amp;gt;
+&lt;/script&gt;
+&lt;!--template for seeall--&gt;
+&lt;script type=&quot;text/template&quot; id=&quot;seeAllTemplate&quot;&gt;
+//&amp;lt;![CDATA[  
+&amp;lt;% var level = listboxlevel ,listelementClickedflag =  smartnew.listelementClicked  %&amp;gt;
+&amp;lt;div tabindex=&quot;&quot; 
+	 role=&quot;&amp;lt;%= (level == 1 ? &quot;&quot; : &quot;group&quot;) %&amp;gt;&quot;
+	 class= &quot;&amp;lt;%= &quot;levels&quot;+&quot; &quot;+&quot;metaLevel&quot;%&amp;gt;&quot; 
+	 id=&quot;&amp;lt;%= &quot;level&quot;+parseInt(level) %&amp;gt;&quot;
+	 level = &quot;&amp;lt;%=parseInt(level)%&amp;gt;&quot;
+	 idx=&quot;&amp;lt;%=(listelementClickedflag === true ? uniqueid : &quot;&quot;) %&amp;gt;&quot;&amp;gt;
+		&amp;lt;div class=&quot;listItems&quot;&amp;gt;
+		&amp;lt;% _.each(data, function(item, key, list) { %&amp;gt; 
+		&amp;lt;div    role=&quot;treeitem&quot;
+				aria-label=&quot;&amp;lt;%=oStartCfg.accessibleCnt.treeLevel.replace('##1##',parseInt(level)) + item.name+' &amp;amp;nbsp; '+( item.leaf  ? selectorVar.sc.accessibleCnt.leafCats : selectorVar.sc.accessibleCnt.arrowKeys ) %&amp;gt;&quot; 
+				aria-expanded=&quot;false&quot;
+				tabindex=&quot;-1&quot; 
+				aria-controls=&quot;&amp;lt;%= &quot;level&quot;+level %&amp;gt;&quot;
+				id=&quot;&amp;lt;%= item.id  %&amp;gt;&quot;
+				uniqueid = &amp;lt;%= item.id %&amp;gt;
+				class=&quot;&amp;lt;%=(!item.leaf ? 'nextLevel': 'lf') %&amp;gt;&quot;
+				data-text = &quot;&amp;lt;%= item.name %&amp;gt;&quot;&amp;gt;
+				&amp;lt;%= item.name %&amp;gt;
+				&amp;lt;% if(!item.leaf) {%&amp;gt;
+					&amp;amp;#62;
+				&amp;lt;% } %&amp;gt;
+		&amp;lt;/div&amp;gt;
+	&amp;lt;% }); %&amp;gt;
+	&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt; 
+//]]&amp;gt;
+&lt;/script&gt; 
+&lt;!--template for seeall--&gt;
+&lt;script type=&quot;text/template&quot; id=&quot;facetsTemplate&quot;&gt;
+//&amp;lt;![CDATA[  
+&amp;lt;% var catID = smartnew.categoryId %&amp;gt;
+&amp;lt;div class=&quot;hdn cnt&quot;&amp;gt;
+&amp;lt;% _.each(data, function(item, key, list) { %&amp;gt;  
+	&amp;lt;div class=&quot;item&quot;&amp;gt;
+            &amp;lt;label for=&quot;&amp;lt;%= item.key %&amp;gt;&quot; class=&quot;fs11&quot;&amp;gt;&amp;lt;%= item.key %&amp;gt;&amp;lt;/label&amp;gt;
+            &amp;lt;div class=&quot;posRel&quot; tabindex=&quot;0&quot; id=&quot;&amp;lt;%= item.key.split(' ').join('').replace(/[\(\)\{\}\[\]\.\,\;\:\&quot;\']/g, '') %&amp;gt;&quot; hgrm =&quot;&amp;lt;%= item.key.split(' ').join('') %&amp;gt;&quot;&amp;gt;
+               &amp;lt;span id=&quot;dd_text&quot;&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;a class=&quot;dd&quot; tabindex=&quot;0&quot; id=&quot;&amp;lt;%= item.key.split(' ').join('').replace(/[\(\)\{\}\[\]\.\,\;\:\&quot;\']/g, '') %&amp;gt;_dd&quot;&amp;gt;&amp;lt;/a&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;div class=&quot;jScrollbar5 hdn&quot; id=&amp;lt;%= &quot;dd_&quot;+item.key.split(' ').join('').replace(/[\(\)\{\}\[\]\.\,\;\:\&quot;\']/g, '') %&amp;gt;&amp;gt;
+                &amp;lt;div class=&quot;jScrollbar_mask&quot;&amp;gt;
+					&amp;lt;input type=&quot;text&quot; autocomplete=&quot;off&quot; maxlength=&quot;50&quot; placeholder=&quot;&amp;lt;%= oStartCfg.content.EnterYourOwn %&amp;gt;&quot; tabindex=&quot;&quot; class=&quot;fl txt oTxt&quot; idx=&quot;&amp;lt;%= item.key.split(' ').join('')  %&amp;gt;&quot;&amp;gt;
+                    &amp;lt;div class=&quot;catySpec&quot; id=&quot;&amp;lt;%= item.key.split(' ').join('') %&amp;gt;&quot;&amp;gt;
+							&amp;lt;b title=&quot;any&quot; alt=&quot;&amp;lt;%= oStartCfg.content.sAny %&amp;gt;&quot; class=&quot;o&quot;&amp;gt;&amp;lt;i&amp;gt;-&amp;lt;/i&amp;gt;&amp;lt;/b&amp;gt;	
+							&amp;lt;% _.each(item.val, function(item, key, list) { %&amp;gt; 
+								&amp;lt;b title=&quot;&amp;lt;%= item %&amp;gt;&quot; alt=&quot;&amp;lt;%= item %&amp;gt;&quot; class=&quot;o&quot;&amp;gt;&amp;lt;i&amp;gt;&amp;lt;%= item %&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/b&amp;gt;
+							&amp;lt;% }) %&amp;gt;
+                    &amp;lt;/div&amp;gt;
+                &amp;lt;/div&amp;gt;
+                &amp;lt;div title=&quot;See all&quot; alt=&quot;See all&quot; class=&quot;sA&quot;&amp;gt;&amp;lt;%= oStartCfg.content.sSeeAll %&amp;gt;&amp;lt;/div&amp;gt;
+            &amp;lt;/div&amp;gt;
+            &amp;lt;div class=&quot;clr&quot;&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+&amp;lt;% }) %&amp;gt;
+&amp;lt;/div&amp;gt;
+//]]&amp;gt;
+&lt;/script&gt;
+&lt;script type=&quot;text/template&quot; id=&quot;seeAllfacetsTemplate&quot;&gt;
+//&amp;lt;![CDATA[ 
+&amp;lt;b title=&quot;&amp;lt;%= oStartCfg.content.sAny %&amp;gt;&quot; alt=&quot;&amp;lt;%= oStartCfg.content.sAny %&amp;gt;&quot; class=&quot;o&quot;&amp;gt;&amp;lt;i&amp;gt;-&amp;lt;/i&amp;gt;&amp;lt;/b&amp;gt;
+&amp;lt;% _.each(searchResults, function(item, key, list) { %&amp;gt; 
+		&amp;lt;b title=&quot;&amp;lt;%= item %&amp;gt;&quot; alt=&quot;&amp;lt;%= item %&amp;gt;&quot; class=&quot;o&quot;&amp;gt;&amp;lt;i&amp;gt;&amp;lt;%= item %&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/b&amp;gt;
+&amp;lt;% }) %&amp;gt;
+//]]&amp;gt;
+&lt;/script&gt;
+&lt;script type=&quot;text/template&quot; id=&quot;noResultTemplate&quot;&gt;
+//&amp;lt;![CDATA[
+&amp;lt;div class='pdg'&amp;gt;
+	&amp;lt;p&amp;gt;&amp;lt;%= oStartCfg.content.noRes %&amp;gt;
+			&amp;lt;b&amp;gt;&amp;lt;%= xssEvents.escapeExpression(smartnew.constants.KEYWORDS.val()) %&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&amp;lt;%= oStartCfg.content.tryAgain %&amp;gt;
+	&amp;lt;/p&amp;gt;
+	&amp;lt;p class=''&amp;gt;
+		&amp;lt;b&amp;gt;&amp;lt;%= oStartCfg.content.sNullSearchTitle %&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&amp;lt;%= oStartCfg.content.sNullSearch %&amp;gt;
+				&amp;lt;a class='goBut' href='javascript:;'&amp;gt;&amp;lt;%= oStartCfg.content.startBtn %&amp;gt;&amp;lt;/a&amp;gt;
+				&amp;lt;span&amp;gt;
+					&amp;lt;span class='catResPath remove' id=&quot;clonediv&quot;&amp;gt;
+					&amp;lt;/span&amp;gt;
+				&amp;lt;/span&amp;gt;
+	&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;
+//]]&amp;gt;
+&lt;/script&gt;
+&lt;script type=&quot;text/template&quot; id=&quot;cancelBtnTemplate&quot;&gt;
+//&amp;lt;![CDATA[ 
+&amp;lt;span id=&quot;goBtn2&quot; class=&quot;category-listing&quot;&amp;gt;&amp;lt;input type=&quot;submit&quot; tabindex=&quot;&quot; value=&quot;&amp;lt;%= oStartCfg.content.startBtn %&amp;gt;&quot; class=&quot;nosubmit&quot;&amp;gt;&amp;lt;/span&amp;gt;
+//]]&amp;gt;
+&lt;/script&gt;
+&lt;script type=&quot;text/template&quot; id=&quot;continueBtnTemplate&quot;&gt;
+//&amp;lt;![CDATA[ 
+&amp;lt;div id=&quot;cancelBtncaty&quot; class=&quot;category-listing pdgBtm hidden-phone&quot;&amp;gt;&amp;lt;input type=&quot;submit&quot; aria-label=oStartCfg.accessibleCnt.continueBtn value=&quot;&amp;lt;%= oStartCfg.content.continueBtn %&amp;gt;&quot; class=&quot;nosubmit _dis&quot;&amp;gt;&amp;lt;/div&amp;gt;
+//]]&amp;gt;
+&lt;/script&gt;
+&lt;script type=&quot;text/template&quot; id=&quot;createBtnTemplate&quot;&gt;
+//&amp;lt;![CDATA[ 
+&amp;lt;div class=&quot;category-listing pdgBtm hidden-phone _dis&quot; id=&quot;cancelBtncaty&quot;&amp;gt;&amp;lt;input type=&quot;submit&quot; aria-label=oStartCfg.accessibleCnt.createListing tabindex=&quot;&quot; class=&quot;nosubmit _dis&quot; value=&quot;&amp;lt;%= oStartCfg.content.startBtn %&amp;gt;&quot;&amp;gt;&amp;lt;/div&amp;gt;
+//]]&amp;gt;
+&lt;/script&gt;
+&lt;script type=&quot;text/template&quot; id=&quot;FooterTemplate&quot;&gt;
+//&amp;lt;![CDATA[ 
+&amp;lt;div id=&quot;results-footer&quot; class=&quot;results-footer&quot;&amp;gt;&amp;lt;h3&amp;gt;&amp;lt;%= oStartCfg.content.resultFooter %&amp;gt;&amp;lt;/h3&amp;gt;&amp;lt;span class=&quot;category-listing&quot; id=&quot;goBtn2&quot;&amp;gt;&amp;lt;input class=&quot;nosubmit&quot; type=&quot;submit&quot; value=&quot;&amp;lt;%= oStartCfg.content.sBtn %&amp;gt;&quot;&amp;gt; &amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;
+//]]&amp;gt;
+&lt;/script&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;&amp;lt;!--
+
+			var oGlobalCfg = {
+				global: {
+					siteId: &quot;0&quot;
+				}, 
+				switchform : {
+					ifrTtl : &quot;Switch to advanced tool&quot;, 
+					content : {
+						unsuppCat : 'Currently, the quick listing tool doesn\'t support &amp;lt;b&amp;gt;#&amp;lt;/b&amp;gt; listings. Click &quot;OK&quot; to switch to the advanced tool and finish your listing.', 
+						syiDraft : 'You\'ve edited your listing with the advanced tool. Click &quot;OK&quot; to switch to the advanced tool and finish your listing.'
+					}, 
+					isShowQty : true, 
+					buttons : {
+						switchTxt : &quot;Switch&quot;, 
+						stayTxt : &quot;Stay&quot;
+					}
+				}, 
+				dialog : {
+					cancelTxt 		: &quot;Cancel&quot;, 
+					closeTxt 		: &quot;Close&quot;, 
+					continueTxt 	: &quot;Continue&quot;, 
+					okTxt 			: &quot;OK&quot;, 
+					yesTxt			: &quot;Yes&quot;, 
+					noTxt			: &quot;No&quot;
+				}, 
+				isDE : &quot;false&quot;
+			}
+			
+			var oTrackingConfig = {
+				sTrackingUrl : &quot;http://www.ebay.com/sell/tag_data.jsf?draftId=&amp;amp;tagData=&quot;, 
+				aSOJTrackingFields : [], 
+				bTrackAll : true
+			}
+		
+//--&amp;gt;&lt;/script&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;
+			//&amp;lt;![CDATA[
+			var oStartCfg = {
+				content: {
+					noImg 				: &quot;NO IMAGE&quot;, 
+					stockImg			: &quot;Stock photo&quot;, 
+					epsImg				: &quot;eBay Picture Service (EPS) photo&quot;, 
+					startBtn 			: &quot;Create listing&quot;,
+					sBtn 				: &quot;Continue to the listing form&quot;, 
+					selCat 				: &quot;Selected category:&quot;,
+					brTitle 			: &quot;Choose a category that your item fits best in:&quot;,
+					noRes 				: &quot;We didn't find a good match for &amp;lt;span&amp;gt;&amp;lt;/span&amp;gt; in &amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;&quot;,
+					tryAgain 			: &quot;Try again by describing your item differently or changing details you added.&quot;,
+					sSeeAll 			: &quot;See all&quot;,
+					sAny 				: &quot;Any&quot;,
+					sChange 			: 'Change&amp;lt;span class=&quot;offScr&quot;&amp;gt;category&amp;lt;/span&amp;gt;',
+					sUseTmpl 			: &quot;Sell one like this&quot;,
+					compatibilitySingle	: &quot;This part is compatible with &amp;lt;a href=\&quot;javascript:;\&quot;&amp;gt;1 vehicle&amp;lt;/a&amp;gt;&quot;,
+					compatibilityMultiple	: &quot;This part is compatible with &amp;lt;a href=\&quot;javascript:;\&quot;&amp;gt;##1## vehicles&amp;lt;/a&amp;gt;&quot;,
+					showDetails			: &quot;Show Details&quot;,
+					sSellYours			: &quot;Sell yours&quot;,
+					sCatResTit			: &quot;Create listing from a similar item&quot;,
+					sCatResTitMotors	: &quot;Create your listing by starting with a product from our catalog. The product details will be pre-filled automatically in your listing.&quot;,
+					cmpCount 			: &quot;This part is compatible with {1} vehicle(s)&quot;,					
+					sNullSearchTitle 	: &quot;Still no matches?&quot;,
+					sNullSearch 		: &quot;Wow, your item is unique!&quot;,
+					catResTitle 		: &quot;Buyers will see your listing in this category:&quot;,
+					catResTitleProds 	: &quot;The products shown are from this category:&quot;,
+					sShowHist 			: &quot;Enter details to find a good match&quot;,
+					sHideHist 			: &quot;Hide details&quot;,
+					sLoading			: &quot;Loading ...&quot;,
+					sShowMore			: &quot;Show more&quot;,
+					sAnotherCaty		: &quot;Select another category&quot;,
+					continueBtn			: &quot;Continue&quot;,
+					resultFooter 		: &quot;None of these match yours?&quot;,
+					searchButton    : &quot;Please give us a title for your listing.&quot;,
+					EnterYourOwn	: &quot;Enter your own&quot;
+				}, 
+				smartBox: {
+					sgUrl 		: &quot;http://www.ebay.com/sell/suggestedCategories.jsf?from=sbr&amp;amp;keyword=&quot;,
+					brUrl 		: &quot;http://www.ebay.com/sell/intercept.jsf?browse=&quot;,
+					icUrl 		: &quot;http://www.ebay.com/sell/intercept.jsf?&quot;,
+					stUrl 		: &quot;http://www.ebay.com/sell/smartbox_tracking.jsf&quot;,
+					viUrl 		: &quot;http://www.ebay.com/sell/smartbox_search.jsf?viItemIdsStr=&quot;,
+					prUrl 		: &quot;http://www.ebay.com/sell/smartbox_search.jsf?keyword=&quot;,
+					splChkUrl 	: &quot;http://cgi5.ebay.com/ws/eBayISAPI.dll?MfcISAPICommand=Syi3GetSellerTags&amp;amp;siteId=0&amp;amp;catId=0&amp;amp;actionId=4&amp;amp;responseformat=2&amp;amp;originalValue=&quot;, 
+					souc 		: &quot;&quot;,
+					uc 			: &quot;&quot;,
+					oriProdId 	: &quot;&quot;,
+					searchPage 	: true,
+					redirectAdvSYI : &quot;false&quot;
+				},
+				url : {
+					list		: &quot;http://www.ebay.com/sell/list.jsf&quot;
+				}, 
+				accessibleCnt : {
+					categoryMeta	:	&quot;Press tab to select sub category&quot;,
+					categoryLeaf	:	&quot;Done selecting a categories. press enter to accept&quot;,
+					categorySeeAll	:	&quot;See all from this list&quot;,
+					categorySeparator	:	&quot;including&quot;, 
+					ajaxBegin		:	&quot;Please wait one moment.&quot;,
+					ajaxEnd			:	&quot;OK. We're ready for you to proceed.&quot;,
+					arrowKeys		: 	&quot;Use left and right arrow keys to change listing categories,up and down arrow keys to move within listing categories&quot;,
+					leafCats		:	&quot;Press enter to confirm category selection, or use left,up or down arrow keys to change selection.&quot;,
+					moreCats		:	&quot;More categories&quot;,
+					moreSubCats		:	&quot;More sub-categories&quot;,
+					continueBtn		:	&quot;Continue with your listing&quot;,
+					selectionText	:	&quot;You have selected ##1##&quot;,
+					enterOrSpacebar	:	&quot;Press the enter key or spacebar to continue with your listing.&quot;,
+					uploadPhotoMobile	:	&quot;&quot;,
+					createListing	:	&quot;Create listing&quot;,
+					disabled		:	&quot;&quot;,
+					leafCatSel		:	&quot;Continue button disabled. Please go back and make a leaf category selection&quot;,
+					onleafCatSel	:	&quot;within&quot;,
+					onleafCatSelBtn :   &quot;Change Category&quot;,
+					treeLevel		:	&quot;level ##1##, Category Tree &quot;
+				},
+				pageName:{
+					context		:	&quot;&quot;,
+					SRP			:	&quot;You are on search results page.&quot;
+				}
+			};
+			//]]&amp;gt;
+		&lt;/script&gt;
+		
+		&lt;!-- js --&gt;&lt;script src=&quot;http://ir.ebaystatic.com/rs/v/0oujtfuxsa4lhjp21bwfoaidx20.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;&lt;div class=&quot;ui-dialog ui-widget ui-widget-content ui-corner-all&quot; role=&quot;dialog&quot; aria-labelledby=&quot;ui-dialog-title-dialogLyr&quot; aria-describedby=&quot;dialogLyr&quot; style=&quot;display: none; z-index: 1000; outline: 0px;&quot;&gt;&lt;div class=&quot;ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix&quot;&gt;&lt;div aria-hidden=&quot;true&quot;&gt;&lt;a class=&quot;ui-dialog-firstelement&quot; tabindex=&quot;-1&quot; href=&quot;#&quot;&gt;&lt;span&gt;&nbsp;&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;h2 class=&quot;ui-dialog-title&quot; id=&quot;ui-dialog-title-dialogLyr&quot;&gt;&nbsp;&lt;/h2&gt;&lt;a href=&quot;#&quot; class=&quot;ui-dialog-titlebar-close ui-corner-all&quot; id=&quot;closeBtn&quot; role=&quot;button&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-closethick&quot;&gt;close&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;div id=&quot;dialogLyr&quot; class=&quot;ui-dialog-content ui-widget-content&quot;&gt;&lt;div id=&quot;dlgContent&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;
+			//&amp;lt;![CDATA[
+			 $(&quot;body&quot;).append ('&amp;lt;img src=&quot;http://www.ebay.com/sell/tag_data.jsf?draftId=&amp;amp;amp;tagData={tagData=%22jsStatus|on|,pageId|||results%22}&quot; class=&quot;offScr&quot; alt=&quot;&quot; /&amp;gt;');
+			//]]&amp;gt;
+		&lt;/script&gt;&lt;img src=&quot;http://www.ebay.com/sell/tag_data.jsf?draftId=&amp;amp;tagData={tagData=%22jsStatus|on|,pageId|||results%22}&quot; class=&quot;offScr&quot; alt=&quot;&quot; /&gt;
+			&lt;script src=&quot;http://www.ebay.com/sellfit/static/fitment.plugin.js?ver=18&quot;&gt;&amp;lt;!--
+
+//--&amp;gt;&lt;/script&gt;&lt;div class=&quot;fitment-wrapper&quot;&gt;&lt;iframe src=&quot;http://www.ebay.com/sellfit/?ver=18#http%3A%2F%2Fwww.ebay.com%2Fsell%2Fresults&quot; name=&quot;fitmentFrame&quot; cd_frame_id_=&quot;ddbc2b7bc57468b882d797002b5fdec2&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+		&lt;noscript&gt;
+			&amp;lt;img src=&quot;http://www.ebay.com/sell/tag_data.jsf?draftId=&amp;amp;amp;tagData={tagData=%22jsStatus|off|,pageId|||results%22}&quot; class=&quot;offScr&quot; /&amp;gt;
+		&lt;/noscript&gt;
+&lt;/body&gt;&lt;/html&gt;</pre>
+			</div>
+			<div class="tab-pane" id='interactions'>
+				<h2>Interactions</h2>
+				<table class="table table-bordered table-striped">
+					<tbody>
+						<tr>
+							<th>Xpath</th>
+							<th>Destination</tg>
+						</tr>
+											</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../lib/shCore.js"></script>
+	<script type="text/javascript" src="../lib/shBrushXml.js"></script>
+	<script type="text/javascript" src="../lib/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+	<script type="text/javascript">
+    	$(document).ready(function() {
+			SyntaxHighlighter.all()
+
+			$('#tabs a').click(function (e) {
+		  		e.preventDefault();
+		  		$(this).tab('show');
+			})
+		});
+    	
+    	$('.hovers').tooltip({
+    	    placement: function(a, element) {
+    	        var position = $(element).position();
+    	        if (position.left > 515) {
+    	            return "left";
+    	        }
+    	        if (position.left < 515) {
+    	            return "right";
+    	        }
+    	        if (position.top < 110){
+    	            return "bottom";
+    	        }
+    	        return "top";
+    	    }
+    	});
+	</script>
+</body>
+</html>

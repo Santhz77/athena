@@ -1,0 +1,121 @@
+{
+  "url" : "https://www.facebook.com/",
+  "basicAuthUrl" : "https://santhu_974%40yahoo.co.in:gazelle2204@www.facebook.com/",
+  "browserConfig" : {
+    "browsertype" : "CHROME",
+    "numberOfBrowsers" : 1,
+    "browserBuilder" : { },
+    "remoteHubUrl" : null,
+    "defaultBuilder" : false,
+    "langOrNull" : null
+  },
+  "plugins" : [ "CrawlOverview", "ExtractHar", "EndCrawling" ],
+  "proxyConfiguration" : {
+    "port" : -1,
+    "hostname" : "none",
+    "type" : "NOTHING"
+  },
+  "crawlRules" : {
+    "crawlEvents" : [ "click" ],
+    "invariants" : [ ],
+    "oracleComparators" : [ {
+      "preConditions" : [ ],
+      "id" : "SimpleComparator",
+      "oracle" : { }
+    } ],
+    "ignoredFrameIdentifiers" : [ ],
+    "preCrawlConfig" : {
+      "waitConditions" : [ ],
+      "crawlConditions" : [ ],
+      "includedElements" : [ {
+        "tagName" : "A",
+        "id" : "id1944978632",
+        "eventType" : "click",
+        "withXpathExpression" : null,
+        "eventableCondition" : null
+      }, {
+        "tagName" : "BUTTON",
+        "id" : "id1987169128",
+        "eventType" : "click",
+        "withXpathExpression" : null,
+        "eventableCondition" : null
+      }, {
+        "tagName" : "INPUT",
+        "id" : "id1239183618",
+        "eventType" : "click",
+        "withXpathExpression" : "//INPUT[@type='submit']",
+        "eventableCondition" : {
+          "id" : "id1239183618",
+          "conditions" : [ ],
+          "inXPath" : "//INPUT[@type='submit']",
+          "linkedInputFields" : [ ]
+        }
+      }, {
+        "tagName" : "INPUT",
+        "id" : "id1804379080",
+        "eventType" : "click",
+        "withXpathExpression" : "//INPUT[@type='button']",
+        "eventableCondition" : {
+          "id" : "id1804379080",
+          "conditions" : [ ],
+          "inXPath" : "//INPUT[@type='button']",
+          "linkedInputFields" : [ ]
+        }
+      } ],
+      "excludedElements" : [ ],
+      "filterAttributeNames" : [ "closure_hashcode_(\\w)*", "jquery[0-9]+" ]
+    },
+    "randomInputInForms" : false,
+    "inputSpecification" : {
+      "crawlElements" : [ ],
+      "formFieldNames" : { },
+      "formFieldValues" : { }
+    },
+    "testInvariantsWhileCrawling" : true,
+    "clickOnce" : true,
+    "randomizeCandidateElements" : true,
+    "crawlHiddenAnchors" : false,
+    "waitAfterReloadUrl" : 60,
+    "waitAfterEvent" : 60,
+    "allCrawlElements" : [ {
+      "tagName" : "A",
+      "id" : "id1944978632",
+      "eventType" : "click",
+      "withXpathExpression" : null,
+      "eventableCondition" : null
+    }, {
+      "tagName" : "BUTTON",
+      "id" : "id1987169128",
+      "eventType" : "click",
+      "withXpathExpression" : null,
+      "eventableCondition" : null
+    }, {
+      "tagName" : "INPUT",
+      "id" : "id1239183618",
+      "eventType" : "click",
+      "withXpathExpression" : "//INPUT[@type='submit']",
+      "eventableCondition" : {
+        "id" : "id1239183618",
+        "conditions" : [ ],
+        "inXPath" : "//INPUT[@type='submit']",
+        "linkedInputFields" : [ ]
+      }
+    }, {
+      "tagName" : "INPUT",
+      "id" : "id1804379080",
+      "eventType" : "click",
+      "withXpathExpression" : "//INPUT[@type='button']",
+      "eventableCondition" : {
+        "id" : "id1804379080",
+        "conditions" : [ ],
+        "inXPath" : "//INPUT[@type='button']",
+        "linkedInputFields" : [ ]
+      }
+    } ]
+  },
+  "maximumStates" : 20,
+  "maximumRuntime" : 3600000,
+  "maximumDepth" : 2,
+  "stateVertexFactory" : null,
+  "outputDir" : "/home/nayak/Work/Thesis 2.0 /athena/Data/facebook.com_mobile"
+}
